@@ -1,6 +1,13 @@
-<app-default-login-layout
-    primaryBtnText="Entrar"
-    secondaryBtnText="Criar Conta"
->
+<app-default-login-layout primaryBtnText="Entrar" secondaryBtnText="Criar Conta">
+
+    <form>
+        <app-primary-input type="email" label="Email" placeholder="seuemail@aqui.com">
+            <img src="./icons/email-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input type="password" label="Senha" placeholder="Digite sua senha">
+            <img src="./icons/password-icon.svg">
+        </app-primary-input>
+    </form>
 
 </app-default-login-layout>
