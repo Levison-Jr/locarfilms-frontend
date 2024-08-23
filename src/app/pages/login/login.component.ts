@@ -22,6 +22,9 @@ export class LoginComponent {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(50)])
     });
-    
+  }
+
+  login() {
+    console.log("LOGIN FEITO!!!", this.loginForm.value);
   }
 }
