@@ -1,9 +1,14 @@
 <div class="container-input">
-    <label for="">{{ label }}</label>
+    <label [for]="inputId">{{ label }}</label>
     <div class="box-input">
         <div class="icon-input">
             <ng-content></ng-content>
         </div>
-        <input [type]="type" [placeholder]="placeholder" />
+        <input
+            [id]="inputId"
+            [type]="type"
+            [placeholder]="placeholder"
+            [value]="value"
+            (input)="onInput($event)" />
     </div>
 </div>
