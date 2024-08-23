@@ -3,7 +3,7 @@
 main {
     height: 100%;
     width: 100%;
-    padding: 20px;
+    padding: 25px;
     background-color: $primary-bg-color;
 
     section {
@@ -19,16 +19,17 @@ main {
             display: flex;
             flex-direction: column;
             width: 100%;
-            gap: 15px;
+            gap: 10px;
 
             button {
-                font-size: 18px;
+                font-size: 20px;
                 font-weight: 500;
                 text-transform: uppercase;
+                cursor: pointer;
                 
                 border: none;
                 border-radius: 20px;
-                padding: 10px;
+                padding: 6px;
                 box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
     
                 &.primary-btn {
@@ -47,7 +48,7 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 12px;
+                font-size: 14px;
                 text-transform: uppercase;
                 color: rgb(142 142 142 / 70%);
                 gap: 10px;
@@ -55,7 +56,7 @@ main {
     
                 span {
                     height: 1px;
-                    width: 35%;
+                    width: 40%;
                     background-color: rgb(142 142 142 / 70%);
                 }
             }
