@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,9 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(50)])
@@ -26,5 +29,10 @@ export class LoginComponent {
 
   login() {
     console.log("LOGIN FEITO!!!", this.loginForm.value);
+  }
+
+  navigateToSignupPage() {
+    console.log("CADASTRO!!");
+    this.router.navigate(["cadastrar"]);
   }
 }
