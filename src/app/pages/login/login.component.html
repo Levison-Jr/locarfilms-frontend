@@ -1,7 +1,7 @@
 <app-default-login-layout
     primaryBtnText="Entrar"
     secondaryBtnText="Criar Conta"
-    (submit)="login()">
+    (callbackPrimaryBtn)="login()">
 
     <form [formGroup]="loginForm">
         <app-primary-input
