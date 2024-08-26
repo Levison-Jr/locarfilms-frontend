@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private toastr: ToastrService
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -35,8 +37,8 @@ export class LoginComponent {
   login() {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe({
-        next: () => console.log("LOGIN SUCCESS!"),
-        error: () => console.log("ERRO NO LOGIN")       
+        next: () => this.toastr.success("Login efetuado com sucesso!", "AUTORIZADO"),
+        error: () => this.toastr.error("Email ou senha incorretos.", "FALHA")       
       });
   }
 
