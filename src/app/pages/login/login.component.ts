@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
@@ -34,11 +34,21 @@ export class LoginComponent {
     });
   }
 
+  requestLoading = signal(false);
+
   login() {
+    this.requestLoading.set(true);
+
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe({
-        next: () => this.toastr.success("Login efetuado com sucesso!", "AUTORIZADO"),
-        error: () => this.toastr.error("Email ou senha incorretos.", "FALHA")       
+        next: () => {
+          this.toastr.success("Login efetuado com sucesso!", "BEM-VINDO(A)");
+          this.requestLoading.set(false);
+        },
+        error: () => {
+          this.toastr.error("Email ou senha incorretos.", "FALHA");
+          this.requestLoading.set(false);
+        }       
       });
   }
 

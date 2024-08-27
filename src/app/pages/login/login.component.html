@@ -2,6 +2,7 @@
     primaryBtnText="Entrar"
     secondaryBtnText="Criar Conta"
     (callbackPrimaryBtn)="login()"
+    [primaryBtnDisabled]="!loginForm.valid || requestLoading()"
     (callbackSecondaryBtn)="navigateToSignupPage()">
 
     <form [formGroup]="loginForm">
