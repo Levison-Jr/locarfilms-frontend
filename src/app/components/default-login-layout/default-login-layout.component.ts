@@ -10,6 +10,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class DefaultLoginLayoutComponent {
   @Input() primaryBtnText: string = "";
   @Input() secondaryBtnText: string = "";
+  @Input() primaryBtnDisabled: boolean = true;
   @Output("callbackPrimaryBtn") onClickPrimaryBtn = new EventEmitter();
   @Output("callbackSecondaryBtn") onClickSecondaryBtn = new EventEmitter();
 
