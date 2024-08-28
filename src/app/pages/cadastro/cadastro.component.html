@@ -1,0 +1,40 @@
+<app-default-login-layout
+    primaryBtnText="Cadastrar"
+    secondaryBtnText="Voltar"
+    (callbackPrimaryBtn)="cadastrar()"
+    [primaryBtnDisabled]="!cadastroForm.valid || requestLoading()"
+    (callbackSecondaryBtn)="navigateToLoginPage()">
+
+    <form [formGroup]="cadastroForm">
+        <app-primary-input
+            formControlName="email"
+            inputId="input-cadastro-email"
+            type="email"
+            label="Email"
+            placeholder="seuemail@aqui.com">
+
+            <img src="./icons/email-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="password"
+            inputId="input-cadastro-password"
+            type="password"
+            label="Senha"
+            placeholder="Digite sua senha">
+
+            <img src="./icons/password-icon.svg">
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="passwordConfirmation"
+            inputId="input-cadastro-password-confirmation"
+            type="password"
+            label="Confirmar senha"
+            placeholder="Digite sua senha novamente">
+
+            <img src="./icons/password-icon.svg">
+        </app-primary-input>
+    </form>
+
+</app-default-login-layout>
