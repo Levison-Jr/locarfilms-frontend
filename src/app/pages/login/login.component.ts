@@ -53,7 +53,6 @@ export class LoginComponent {
   }
 
   navigateToSignupPage() {
-    console.log("CADASTRO!!");
-    this.router.navigate(["cadastrar"]);
+    this.router.navigate(["cadastro"]);
   }
 }
