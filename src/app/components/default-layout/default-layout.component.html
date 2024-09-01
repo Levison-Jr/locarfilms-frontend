@@ -2,7 +2,14 @@
     <section id="header-section">
         <div><img ngSrc="./icons/menu-icon.svg" width="24" height="24"></div>
         <div><img ngSrc="./logo-header.svg" width="153" height="19" priority></div>
-        <div>Entrar</div>
+        <div (click)="navigateToLoginPage()">
+            @if (usuarioAutenticado) {
+                <img ngSrc="./icons/logout-icon.svg" width="24" height="24">
+            }
+            @else {
+                Entrar
+            }
+        </div>
     </section>
 
     <section id="body-section">
