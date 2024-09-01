@@ -48,6 +48,12 @@ export class CadastroComponent {
   requestLoading = signal(false);
 
   cadastrar() {
+    if (this.cadastroForm.errors?.['PasswordNoMatch']) {
+      this.toastr.error("A confirmação da senha não é válida.", "FALHA");
+      return;
+    }
+    if (!this.cadastroForm.valid) return;
+    
     this.identityService.cadastro(
       this.cadastroForm.value.email,
       this.cadastroForm.value.password,
@@ -58,8 +64,12 @@ export class CadastroComponent {
           this.toastr.success("Cadastro efetuado com sucesso!", "BEM-VINDO(A)");
           this.requestLoading.set(false);
         },
-        error: () => {
-          this.toastr.error("Não foi possível realizar o cadastro, tente novamente.", "FALHA");
+        error: (response) => {
+          console.log(response);
+          const usuarioJaCadastrado = response.status === 400 && response.error.detail.includes("already taken");
+          const messageError = usuarioJaCadastrado ? "Email já está cadastrado." : "Não foi possível realizar o cadastro, tente novamente.";
+          
+          this.toastr.error(messageError, "FALHA");
           this.requestLoading.set(false);
         }
       });

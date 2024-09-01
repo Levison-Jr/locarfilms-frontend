@@ -2,7 +2,7 @@
     primaryBtnText="Cadastrar"
     secondaryBtnText="Voltar"
     (callbackPrimaryBtn)="cadastrar()"
-    [primaryBtnDisabled]="!cadastroForm.valid || requestLoading()"
+    [primaryBtnDisabled]="requestLoading()"
     (callbackSecondaryBtn)="navigateToLoginPage()">
 
     <form [formGroup]="cadastroForm">
