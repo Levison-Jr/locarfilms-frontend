@@ -3,8 +3,8 @@ import { DefaultLoginLayoutComponent } from '../../components/default-login-layo
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { IdentityService } from '../../services/identity.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
     PrimaryInputComponent
   ],
   providers: [
-    LoginService
+    IdentityService
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -25,7 +25,7 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private loginService: LoginService,
+    private identityService: IdentityService,
     private toastr: ToastrService
   ) {
     this.loginForm = new FormGroup({
@@ -39,7 +39,7 @@ export class LoginComponent {
   login() {
     this.requestLoading.set(true);
 
-    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
+    this.identityService.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe({
         next: () => {
           this.toastr.success("Login efetuado com sucesso!", "BEM-VINDO(A)");
