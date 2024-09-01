@@ -21,6 +21,10 @@ main {
         }
     }
 
+    #body-section {
+        flex-grow: 1;
+    }
+
     #footer-section {
         display: flex;
         justify-content: space-between;
