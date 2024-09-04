@@ -1,0 +1,21 @@
+@if (images && images.length > 0) {
+    <div class="container-carousel">
+        @for (image of images; track $index) {
+            <img [src]="image.imageSrc"
+                [ngClass]="{'image-active': selectedIndex === $index}"
+                class="fade">
+        }
+
+        <div class="btn-carousel btn-next-image">
+            <i class="fa fa-arrow-circle-right icon-carousel" aria-hidden="true"
+                (click)="onClickNextButton()"
+            ></i>
+        </div>
+
+        <div class="btn-carousel btn-prev-image">
+            <i class="fa fa-arrow-circle-left icon-carousel" aria-hidden="true"
+                (click)="onClickPrevButton()"
+            ></i>
+        </div>
+    </div>
+}
