@@ -1,1 +1,21 @@
-<app-default-layout></app-default-layout>
+<app-default-layout>
+    <main>
+        <section id="destaques-section">
+            <div class="container-label-section">
+                <img ngSrc="./icons/play-arrow-icon.svg" width="24" height="24">
+                <span>Destaques</span>
+            </div>
+
+            <div class="wrapper-carousel">
+                <app-carousel [images]="images"></app-carousel>
+            </div>
+        </section>
+
+        <section id="explorar-section">
+            <div class="container-label-section">
+                <img ngSrc="./icons/list-icon.svg" width="24" height="24">
+                <span>Explorar</span>
+            </div>
+        </section>
+    </main>
+</app-default-layout>
