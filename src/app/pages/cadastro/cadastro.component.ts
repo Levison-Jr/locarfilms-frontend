@@ -64,12 +64,8 @@ export class CadastroComponent {
           this.toastr.success("Cadastro efetuado com sucesso!", "BEM-VINDO(A)");
           this.requestLoading.set(false);
         },
-        error: (response) => {
-          console.log(response);
-          const usuarioJaCadastrado = response.status === 400 && response.error.detail.includes("already taken");
-          const messageError = usuarioJaCadastrado ? "Email já está cadastrado." : "Não foi possível realizar o cadastro, tente novamente.";
-          
-          this.toastr.error(messageError, "FALHA");
+        error: (error) => {
+          this.toastr.error(error.message, "FALHA");
           this.requestLoading.set(false);
         }
       });
