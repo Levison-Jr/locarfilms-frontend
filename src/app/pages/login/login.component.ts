@@ -44,6 +44,8 @@ export class LoginComponent {
         next: () => {
           this.toastr.success("Login efetuado com sucesso!", "BEM-VINDO(A)");
           this.requestLoading.set(false);
+
+          this.navigateToMainPage();
         },
         error: () => {
           this.toastr.error("Email ou senha incorretos.", "FALHA");
@@ -54,5 +56,9 @@ export class LoginComponent {
 
   navigateToSignupPage() {
     this.router.navigate(["cadastro"]);
+  }
+
+  navigateToMainPage() {
+    this.router.navigate([""]);
   }
 }
