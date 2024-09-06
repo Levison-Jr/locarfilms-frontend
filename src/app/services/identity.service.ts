@@ -24,6 +24,10 @@ export class IdentityService {
       );
   }
 
+  logout() {
+    sessionStorage.removeItem("auth-token");
+  }
+
   cadastro(email: string, password: string, passwordConfirm: string) {
     return this.httpClient.post<UserDto>(this.endpointCadastro, { email, password, passwordConfirm })
       .pipe(
