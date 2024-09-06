@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DefaultLayoutComponent } from '../../components/default-layout/default-layout.component';
 import { NgOptimizedImage } from '@angular/common';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
+import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
 
 @Component({
   selector: 'app-main',
@@ -9,7 +10,8 @@ import { CarouselComponent } from '../../components/carousel/carousel.component'
   imports: [
     DefaultLayoutComponent,
     NgOptimizedImage,
-    CarouselComponent
+    CarouselComponent,
+    MovieCardComponent
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
