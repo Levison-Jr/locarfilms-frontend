@@ -11,6 +11,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './movie-card.component.scss'
 })
 export class MovieCardComponent {
+  @Input() movieId: number = 0;
   @Input() titulo: string = "";
   @Input() categoria: string = "";
   @Input() caminhoImagem: string = "";
