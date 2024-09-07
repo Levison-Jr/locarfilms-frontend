@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { MovieDto } from '../../types/movie-dto.type';
 
 interface carouselImage {
   imageSrc: string
@@ -15,7 +16,7 @@ interface carouselImage {
   styleUrl: './carousel.component.scss'
 })
 export class CarouselComponent {
-  @Input() images: carouselImage[] = [];
+  @Input() movies: MovieDto[] = [];
   @Input() autoSlide: boolean = true;
   @Input() autoSlideTimer: number = 10000;
 
@@ -32,7 +33,7 @@ export class CarouselComponent {
   }
 
   onClickNextButton() {
-    if (this.selectedIndex === this.images.length - 1) {
+    if (this.selectedIndex === this.movies.length - 1) {
       this.selectedIndex = 0;
     }
     else {
@@ -42,7 +43,7 @@ export class CarouselComponent {
 
   onClickPrevButton() {
     if (this.selectedIndex === 0) {
-      this.selectedIndex = this.images.length - 1;
+      this.selectedIndex = this.movies.length - 1;
     }
     else {
       this.selectedIndex--;

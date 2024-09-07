@@ -1,9 +1,10 @@
-@if (images && images.length > 0) {
+@if (movies && movies.length > 0) {
     <div class="container-carousel">
-        @for (image of images; track $index) {
-            <img [src]="image.imageSrc"
+        @for (movie of movies; track $index) {
+            <img [src]="movie.imageBannerUrl"
                 [ngClass]="{'image-active': selectedIndex === $index}"
-                class="fade">
+                class="fade"
+                [attr.data-movie-id]="movie.id">
         }
 
         <div class="btn-carousel btn-next-image">
