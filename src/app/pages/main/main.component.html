@@ -7,7 +7,7 @@
             </div>
 
             <div class="wrapper-carousel">
-                <app-carousel [images]="images"></app-carousel>
+                <app-carousel [movies]="moviesToCarousel"></app-carousel>
             </div>
         </section>
 
@@ -18,33 +18,15 @@
             </div>
 
             <div id="wrapper-movie-cards">
-                <app-movie-card
-                    titulo="Projeto Almaque"
-                    categoria="Ficção Científica"
-                    caminhoImagem="https://m.media-amazon.com/images/S/pv-target-images/fafc2efd6148875936b80cd2289054ce7b5c9ab04c0a7aa7d231e67d7c87fadc.jpg">
+                @for (movie of moviesToExplorer; track $index) {
+                    <app-movie-card
+                        [movieId]="movie.id"
+                        [titulo]="movie.title"
+                        [categoria]="movie.category"
+                        [caminhoImagem]="movie.imageIconUrl">
 
-                </app-movie-card>
-
-                <app-movie-card
-                    titulo="O Auto da Compadecida"
-                    categoria="Comédia"
-                    caminhoImagem="https://br.web.img3.acsta.net/r_1280_720/pictures/210/416/21041683_20130919124706739.jpg">
-
-                </app-movie-card>
-
-                <app-movie-card
-                    titulo="Sempre ao Seu Lado"
-                    categoria="Drama"
-                    caminhoImagem="https://br.web.img3.acsta.net/medias/nmedia/18/87/30/97/20028681.jpg">
-
-                </app-movie-card>
-
-                <app-movie-card
-                    titulo="Divertidamente 2"
-                    categoria="Animação"
-                    caminhoImagem="https://www.atoupeira.com.br/wp-content/uploads/2023/11/divertida-mente-2-poster-nacional.jpg">
-
-                </app-movie-card>
+                    </app-movie-card>
+                }
             </div>
         </section>
     </main>
