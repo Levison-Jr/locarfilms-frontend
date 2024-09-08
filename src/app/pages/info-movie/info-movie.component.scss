@@ -1,0 +1,59 @@
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    #banner-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 15px;
+        gap: 15px;
+
+        background-image: url("https://dspa.com.br/wp-content/uploads/2018/04/1d69b1e3d517074c4643f77f95a64f49.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 40%;
+        color: #fff;
+        box-shadow:0px 4px 5px rgba(0, 0, 0, 0.25);
+
+        h1 {
+            font-size: 38px;
+            font-weight: 700;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: normal;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+        }
+
+        #wrapper-info-tags {
+            display: flex;
+            gap: 10px;
+
+            .info-tags {
+                width: 50%;
+                height: 30px;
+                text-align: center;
+                color: #1D1B20;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: 500;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+
+                &:first-child {
+                    background-color: #fff;
+                }
+
+                &:nth-child(2) {
+                    background-color: #34C759;
+                }
+            }
+        }
+    }
+}
