@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { MainComponent } from './pages/main/main.component';
+import { InfoMovieComponent } from './pages/info-movie/info-movie.component';
 
 export const routes: Routes = [
     {
@@ -15,5 +16,9 @@ export const routes: Routes = [
     {
         path: "cadastro",
         component: CadastroComponent
+    },
+    {
+        path: "filme/:id",
+        component: InfoMovieComponent
     }
 ];
