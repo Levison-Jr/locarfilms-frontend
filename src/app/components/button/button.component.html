@@ -1,0 +1,5 @@
+<button (click)="onClickButton()"
+        [disabled]="disabled"
+        [class]="btnType == 'primatyButton' ? 'primary-btn' : 'secondary-btn'">
+    <ng-content></ng-content>
+</button>
