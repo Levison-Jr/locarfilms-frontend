@@ -23,4 +23,8 @@ export class InfoMovieComponent {
   ngOnInit() {
     this.movieId = this.route.snapshot.paramMap.get("id");
   }
+
+  navigateToRentMovie() {
+    console.log("navegar..");
+  }
 }
