@@ -19,7 +19,7 @@ export class ErrorHandlerService {
   constructor() { }
 
   handleError(error: HttpErrorResponse) {
-    let errorMessage = 'An unknown error occurred.';
+    let errorMessage = 'Erro inesperado, tente novamente.';
   
     if (error.error instanceof ErrorEvent) {
       errorMessage = `Error: ${error.error.message}`;
@@ -37,6 +37,9 @@ export class ErrorHandlerService {
         } else if (backendError.detail) {
           errorMessage = backendError.detail;
         }
+      }
+      else if (error.status === 404) {
+        errorMessage = "Não encontrado.";
       }
     }
   
