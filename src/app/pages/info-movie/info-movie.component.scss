@@ -63,10 +63,10 @@ main {
 
     #detail-section {
         display: flex;
-        justify-content: space-between;
         flex-direction: column;
         flex-grow: 1;
-        padding: 20px 20px 30px;
+        padding: 20px 20px 25px;
+        gap: 15px;
 
         h3 {
             font-size: 20px;
@@ -79,6 +79,10 @@ main {
             p {
                 font-size: 14px;
             }
+        }
+
+        app-button {
+            margin-top: auto;
         }
     }
 }
