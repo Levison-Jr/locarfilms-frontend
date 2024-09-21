@@ -39,6 +39,55 @@
                     ALUGAR FILME
                 </app-button>
             </section>
+
+            <section id="rent-section">
+                <div>
+                    <p>Dia da retirada</p>
+
+                    <div id="wrapper-pick-day">
+                        <div>
+                            <input type="radio" name="pick-day" id="check-hoje">
+                            <div>
+                                <label for="check-hoje">Hoje</label>
+                                <span>20/09/2024</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <input type="radio" name="pick-day" id="check-amanha">
+                            <div>
+                                <label for="check-amanha">Amanhã</label>
+                                <span>21/09/2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form [formGroup]="rentForm">
+                    <app-primary-input
+                        formControlName="expirationDate"
+                        inputId="input-expiration-date"
+                        type="email"
+                        label="Data de devolução"
+                        placeholder="seuemail@aqui.com">
+            
+                        <img src="./icons/email-icon.svg">
+                    </app-primary-input>
+                </form>
+
+                <div>
+                    <p>Resumo do aluguel</p>
+
+                    <div id="wrapper-resumo">
+                        <span>Duração: <span>5</span> <span> dia(s)</span></span>
+                        <span>Valor total: <span>R$ 20,00</span></span>
+                    </div>
+                </div>
+
+                <app-button btnType="primatyButton">
+                    CONFIRMAR
+                </app-button>
+            </section>
         }
         @else if (movieNotFound) {
             <h1 style="text-align: center;">Filme não encontrado</h1>

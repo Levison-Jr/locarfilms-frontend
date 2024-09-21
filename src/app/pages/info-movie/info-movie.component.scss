@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 main {
     height: 100%;
     display: flex;
@@ -62,7 +64,7 @@ main {
     }
 
     #detail-section {
-        display: flex;
+        display: none;
         flex-direction: column;
         flex-grow: 1;
         padding: 20px 20px 25px;
@@ -78,6 +80,60 @@ main {
 
             p {
                 font-size: 14px;
+            }
+        }
+
+        app-button {
+            margin-top: auto;
+        }
+    }
+
+    #rent-section {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 20px 20px 25px;
+        gap: 15px;
+        color: $text-color;
+
+        p {
+            color: $secondary-color;
+            margin-bottom: 5px;
+        }
+
+        #wrapper-pick-day {
+            display: flex;
+            justify-content: space-around;
+
+            >div {
+                display: flex;
+                gap: 15px;
+
+                >div {
+                    display: flex;
+                    flex-direction: column;
+
+                    span {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+
+        #wrapper-resumo {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: $secondary-color;
+
+            padding: 15px;
+            border-radius: 20px;
+            border: 1px dashed $primary-color;
+            background-color: $secondary-bg-color;
+            box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
+
+            >span > span {
+                font-weight: bold;
             }
         }
 

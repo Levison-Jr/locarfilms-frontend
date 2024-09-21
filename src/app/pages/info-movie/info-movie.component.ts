@@ -10,6 +10,8 @@ import { ToastrService } from 'ngx-toastr';
 
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 registerLocaleData(ptBr);
 
@@ -20,7 +22,9 @@ registerLocaleData(ptBr);
     DefaultLayoutComponent,
     NgOptimizedImage,
     ButtonComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    PrimaryInputComponent,
+    ReactiveFormsModule
   ],
   providers: [
     MovieService,
@@ -34,10 +38,17 @@ export class InfoMovieComponent {
   movie!: MovieDto;
   movieNotFound: boolean = false;
 
+  rentForm: FormGroup;
+
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService) {
+
+      this.rentForm = new FormGroup({
+        expirationDate: new FormControl('', [Validators.required])
+      });
+    }
 
   ngOnInit() {
     this.movieId = this.route.snapshot.paramMap.get("id");
