@@ -32,8 +32,8 @@ export class MainComponent {
       releaseDate: "",
       registrationDateTime: "",
       lastModifiedDateTime: "",
-      imageBannerUrl: "https://dspa.com.br/wp-content/uploads/2018/04/1d69b1e3d517074c4643f77f95a64f49.jpg",
-      imageIconUrl: "https://dspa.com.br/wp-content/uploads/2018/04/1d69b1e3d517074c4643f77f95a64f49.jpg"
+      imageBannerUrl: "https://super.abril.com.br/wp-content/uploads/2018/07/site_71.jpg?crop=1&resize=500,300",
+      imageIconUrl: "https://super.abril.com.br/wp-content/uploads/2018/07/site_71.jpg?crop=1&resize=100,75"
     },
     {
       id: 2,
