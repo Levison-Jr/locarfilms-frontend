@@ -122,6 +122,21 @@ main {
             }
         }
 
+        #wrapper-numero-dias {
+            color: $secondary-color;
+
+            #input-numero-dias {
+                width: 10%;
+                text-align: center;
+                border-radius: 5px;
+                border: 1px solid rgba(209.31249797344208, 209.31249797344208, 209.31249797344208, 1);
+                
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+        }
+
         #wrapper-resumo {
             display: flex;
             flex-direction: column;
