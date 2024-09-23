@@ -46,44 +46,47 @@
 
                     <div id="wrapper-pick-day">
                         <div>
-                            <input type="radio" name="pick-day" id="check-hoje" checked>
+                            <input (change)="atualizarResumo()" value="hoje" class="pick-day" type="radio" name="pick-day" id="check-hoje" checked>
                             <div>
                                 <label for="check-hoje">Hoje</label>
-                                <span>20/09/2024</span>
+                                <span>{{ dateTimeToday.toLocaleDateString() }}</span>
                             </div>
                         </div>
 
                         <div>
-                            <input type="radio" name="pick-day" id="check-amanha">
+                            <input (change)="atualizarResumo()" value="amanha" class="pick-day" type="radio" name="pick-day" id="check-amanha">
                             <div>
                                 <label for="check-amanha">Amanhã</label>
-                                <span>21/09/2024</span>
+                                <span>{{ dateTimeTomorrow.toLocaleDateString() }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <form [formGroup]="rentForm">
-                    <app-primary-input
-                        formControlName="expirationDate"
-                        inputId="input-expiration-date"
-                        type="date"
-                        label="Data de devolução"
-                        placeholder="seuemail@aqui.com">
-            
-                    </app-primary-input>
-                </form>
+                <div id="wrapper-numero-dias">
+                    Alugar por
+                    <input (input)="atualizarResumo()"
+                        type="number"
+                        min="1"
+                        id="input-numero-dias"> dia(s)
+                </div>
 
                 <div>
                     <p>Resumo do aluguel</p>
 
                     <div id="wrapper-resumo">
-                        <span>Duração: <span>5</span> <span> dia(s)</span></span>
-                        <span>Valor total: <span>R$ 20,00</span></span>
+                        @if (dateTimeExpiration === null || totalDays <= 0) {
+                            Selecione a quantidade de dias
+                        }
+                        @else {
+                            <span>Duração: <span>{{ totalDays }}</span> <span> dia(s)</span></span>
+                            <span>Valor total: <span>{{ totalValue | currency : 'BRL' }}</span></span>
+                            <span>Devolução: <span>{{ dateTimeExpiration.toLocaleDateString() }}</span></span>
+                        }
                     </div>
                 </div>
 
-                <app-button btnType="primatyButton">
+                <app-button [disabled]="dateTimeExpiration === null || totalDays <= 0" btnType="primatyButton">
                     CONFIRMAR
                 </app-button>
             </section>

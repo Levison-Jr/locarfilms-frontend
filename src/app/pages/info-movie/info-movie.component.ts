@@ -40,15 +40,22 @@ export class InfoMovieComponent {
 
   rentForm: FormGroup;
 
+  dateTimeToday = new Date();
+  dateTimeTomorrow = this.addDays(this.dateTimeToday, 1);
+
+  totalDays: number = 0;
+  totalValue: number = 0;
+  dateTimeExpiration: Date | null = null;
+
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
     private toastr: ToastrService) {
 
-      this.rentForm = new FormGroup({
-        expirationDate: new FormControl('', [Validators.required])
-      });
-    }
+    this.rentForm = new FormGroup({
+      expirationDate: new FormControl('', [Validators.required])
+    });
+  }
 
   ngOnInit() {
     this.movieId = this.route.snapshot.paramMap.get("id");
@@ -69,5 +76,39 @@ export class InfoMovieComponent {
 
   navigateToRentMovie() {
     console.log("navegar..");
+  }
+
+  atualizarResumo() {
+    const pickDay = document.querySelector('input[name="pick-day"]:checked') as HTMLInputElement;
+    const baseDate = pickDay.value == 'hoje' ? this.dateTimeToday : this.dateTimeTomorrow;
+
+    const date = new Date(baseDate.getTime());
+
+    const days = Number((document.getElementById("input-numero-dias") as HTMLInputElement).value);
+
+    if (days > 1000 || days < 0) {
+      this.totalDays = 0;
+      return;
+    }
+
+    date.setDate(date.getDate() + days);
+
+    this.totalDays = days;
+    this.totalValue = this.movie.costPerDay * days;
+    this.dateTimeExpiration = date;
+  }
+
+  addDays(date: Date, days: number): Date {
+    const newDate = new Date(date);
+    newDate.setDate(date.getDate() + days);
+    return newDate;
+  }
+
+  formatDate(date: Date): string {
+    const ano = date.getFullYear();
+    const mes = String(date.getMonth() + 1).padStart(2, '0');
+    const dia = String(date.getDate()).padStart(2, '0');
+
+    return `${ano}-${mes}-${dia}`;
   }
 }
