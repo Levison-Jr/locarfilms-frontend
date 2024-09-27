@@ -103,6 +103,10 @@ main {
             margin-bottom: 5px;
         }
 
+        #container-pick-day {
+            display: none;
+        }
+
         #wrapper-pick-day {
             display: flex;
             justify-content: space-around;

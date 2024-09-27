@@ -41,7 +41,7 @@
             </section>
 
             <section id="rent-section">
-                <div>
+                <div id="container-pick-day">
                     <p>Dia da retirada</p>
 
                     <div id="wrapper-pick-day">
@@ -82,6 +82,8 @@
                             <span>Duração: <span>{{ totalDays }}</span> <span> dia(s)</span></span>
                             <span>Valor total: <span>{{ totalValue | currency : 'BRL' }}</span></span>
                             <span>Devolução: <span>{{ dateTimeExpiration.toLocaleDateString() }}</span></span>
+                            
+                            <span>A retirada do filme deverá ser feita até amanhã ({{ dateTimeTomorrow.toLocaleDateString() }}). Caso contrário, o aluguel será cancelado.</span>
                         }
                     </div>
                 </div>
