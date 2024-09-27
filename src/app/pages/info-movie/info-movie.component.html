@@ -22,7 +22,7 @@
                 </div>
             </section>
 
-            <section id="detail-section">
+            <section id="detail-section" [ngClass]="{'hide-section': pageIndex == 1}">
                 <div>
                     <h3>Lançamento {{movie.releaseDate.split("-")[0]}}</h3>
                     <div class="wrapper-info-duration">
@@ -35,12 +35,12 @@
                     {{movie.description}}
                 </div>
 
-                <app-button (onClick)="navigateToRentMovie()" btnType="primatyButton">
+                <app-button (onClick)="navigateBetweenPages()" btnType="primatyButton">
                     ALUGAR FILME
                 </app-button>
             </section>
 
-            <section id="rent-section">
+            <section id="rent-section" [ngClass]="{'hide-section': pageIndex == 0}">
                 <div id="container-pick-day">
                     <p>Dia da retirada</p>
 
@@ -71,7 +71,7 @@
                         id="input-numero-dias"> dia(s)
                 </div>
 
-                <div>
+                <div id="container-resumo">
                     <p>Resumo do aluguel</p>
 
                     <div id="wrapper-resumo">
@@ -90,6 +90,10 @@
 
                 <app-button [disabled]="dateTimeExpiration === null || totalDays <= 0" btnType="primatyButton">
                     CONFIRMAR
+                </app-button>
+
+                <app-button (onClick)="navigateBetweenPages()" btnType="secondaryButton">
+                    VOLTAR
                 </app-button>
             </section>
         }

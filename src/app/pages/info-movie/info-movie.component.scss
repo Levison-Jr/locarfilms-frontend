@@ -63,8 +63,15 @@ main {
         }
     }
 
+    .hide-section {
+        height: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        flex-grow: 0 !important;
+    }
+
     #detail-section {
-        display: none;
+        display: flex;
         flex-direction: column;
         flex-grow: 1;
         padding: 10px 20px 25px;
@@ -93,10 +100,11 @@ main {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        padding: 10px 20px 25px;
+        padding: 10px 20px;
         gap: 15px;
         color: $text-color;
         overflow: auto;
+        transition: height 3s;
 
         p {
             color: $secondary-color;
@@ -158,8 +166,8 @@ main {
             }
         }
 
-        app-button {
-            margin-top: auto;
+        #container-resumo {
+            margin-bottom: auto;
         }
     }
 }
