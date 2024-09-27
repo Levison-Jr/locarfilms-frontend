@@ -1,5 +1,5 @@
 import { Component, LOCALE_ID } from '@angular/core';
-import { CurrencyPipe } from '@angular/common'
+import { CurrencyPipe, CommonModule } from '@angular/common'
 import { ActivatedRoute } from '@angular/router';
 import { DefaultLayoutComponent } from '../../components/default-layout/default-layout.component';
 import { NgOptimizedImage } from '@angular/common';
@@ -24,7 +24,8 @@ registerLocaleData(ptBr);
     ButtonComponent,
     CurrencyPipe,
     PrimaryInputComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     MovieService,
@@ -34,6 +35,8 @@ registerLocaleData(ptBr);
   styleUrl: './info-movie.component.scss'
 })
 export class InfoMovieComponent {
+  pageIndex: number = 0;
+
   movieId: string | null = "";
   movie!: MovieDto;
   movieNotFound: boolean = false;
@@ -74,8 +77,8 @@ export class InfoMovieComponent {
     }
   }
 
-  navigateToRentMovie() {
-    console.log("navegar..");
+  navigateBetweenPages() {
+    this.pageIndex = this.pageIndex == 0 ? 1 : 0;
   }
 
   atualizarResumo() {
