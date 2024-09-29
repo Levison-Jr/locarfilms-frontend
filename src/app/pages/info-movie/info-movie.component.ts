@@ -81,6 +81,11 @@ export class InfoMovieComponent {
     this.pageIndex = this.pageIndex == 0 ? 1 : 0;
   }
 
+  confirmarAluguel() {
+    console.log("confirmar...");
+    
+  }
+
   atualizarResumo() {
     const pickDay = document.querySelector('input[name="pick-day"]:checked') as HTMLInputElement;
     const baseDate = pickDay.value == 'hoje' ? this.dateTimeToday : this.dateTimeTomorrow;

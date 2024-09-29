@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <app-button [disabled]="dateTimeExpiration === null || totalDays <= 0" btnType="primatyButton">
+                <app-button (onClick)="confirmarAluguel()" [disabled]="dateTimeExpiration === null || totalDays <= 0" btnType="primatyButton">
                     CONFIRMAR
                 </app-button>
 
