@@ -1,4 +1,4 @@
-import { Component, LOCALE_ID } from '@angular/core';
+import { Component, LOCALE_ID, signal } from '@angular/core';
 import { CurrencyPipe, CommonModule } from '@angular/common'
 import { ActivatedRoute } from '@angular/router';
 import { DefaultLayoutComponent } from '../../components/default-layout/default-layout.component';
@@ -12,6 +12,10 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AluguelService } from '../../services/aluguel.service';
+import { CriarAluguelRequest } from '../../types/request/criar-aluguel.type';
+import { AluguelStatusEnum } from '../../enums/aluguel-status-enum';
+import { PagamentoStatusEnum } from '../../enums/pagamento-status-enum';
 
 registerLocaleData(ptBr);
 
@@ -29,6 +33,7 @@ registerLocaleData(ptBr);
   ],
   providers: [
     MovieService,
+    AluguelService,
     { provide: LOCALE_ID, useValue: 'pt' }
   ],
   templateUrl: './info-movie.component.html',
@@ -53,6 +58,7 @@ export class InfoMovieComponent {
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
+    private aluguelService: AluguelService,
     private toastr: ToastrService) {
 
     this.rentForm = new FormGroup({
@@ -66,7 +72,7 @@ export class InfoMovieComponent {
     if (this.movieId) {
       this.movieService.getMovieById(this.movieId).subscribe({
         next: (value) => {
-          this.movie = value
+          this.movie = value;
         },
         error: (error) => {
           console.error(error);
@@ -81,9 +87,31 @@ export class InfoMovieComponent {
     this.pageIndex = this.pageIndex == 0 ? 1 : 0;
   }
 
+  requestLoading = signal(false);
+
   confirmarAluguel() {
-    console.log("confirmar...");
-    
+    this.requestLoading.set(true);
+
+    const dadosAluguel: CriarAluguelRequest = {
+      userId: '501c6864-5ebd-4ab5-8218-25d9c010d833',
+      movieId: Number(this.movieId),
+      rentalStartDate: this.formatDate(this.dateTimeToday),
+      rentalEndDate: this.formatDate(this.dateTimeExpiration),
+      rentalStatus: AluguelStatusEnum.AguardandoRetirada,
+      paymentStatus: PagamentoStatusEnum.Pendente
+    };
+
+    this.aluguelService.criarAluguel(dadosAluguel)
+      .subscribe({
+        next: () => {
+          this.toastr.success("Seu filme te espera!", "CONFIRMADO");
+          this.requestLoading.set(false);
+        },
+        error: () => {
+          this.toastr.error("Não foi possível concluir, tente novamente.", "FALHA");
+          this.requestLoading.set(false);
+        }
+      });
   }
 
   atualizarResumo() {
@@ -112,7 +140,9 @@ export class InfoMovieComponent {
     return newDate;
   }
 
-  formatDate(date: Date): string {
+  formatDate(date: Date | null): string {
+    if (!date) return '';
+
     const ano = date.getFullYear();
     const mes = String(date.getMonth() + 1).padStart(2, '0');
     const dia = String(date.getDate()).padStart(2, '0');
