@@ -1,6 +1,6 @@
 <main>
     <section id="header-section" [style]="!headerVisible ? 'display: none' : ''">
-        <div><img ngSrc="./icons/menu-icon.svg" width="24" height="24"></div>
+        <div><img ngSrc="./icons/menu-icon.svg" width="24" height="24" style="visibility: hidden;"></div>
         <div><img ngSrc="./logo-header.svg" width="153" height="19" priority></div>
         <div (click)="navigateToLoginPage()">
             @if (usuarioAutenticado) {
@@ -18,12 +18,12 @@
 
     <section id="footer-section">
         <div>
-            <img ngSrc="./icons/film-icon.svg" width="24" height="24">
-            <span>Filmes</span>
+            <img ngSrc="./icons/home-icon.svg" width="24" height="24">
+            <span>Explorar</span>
         </div>
         <div>
-            <img ngSrc="./icons/fav-icon.svg" width="24" height="24">
-            <span>Favoritos</span>
+            <img ngSrc="./icons/film-icon.svg" width="24" height="24">
+            <span>Meus Filmes</span>
         </div>
         <div>
             <img ngSrc="./icons/user-icon.svg" width="24" height="24">
