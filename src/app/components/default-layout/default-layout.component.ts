@@ -30,4 +30,8 @@ export class DefaultLayoutComponent {
     this.identityService.logout();
     this.router.navigate(["login"]);
   }
+
+  navigateToMainPage() {
+    this.router.navigate([""]);
+  }
 }
