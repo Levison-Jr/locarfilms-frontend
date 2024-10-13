@@ -19,7 +19,8 @@ export class IdentityService {
       .pipe(tap(
         (value) => {
           console.log(value);
-          sessionStorage.setItem("auth-token", value.accessToken)
+          sessionStorage.setItem("user-id", value.userId);
+          sessionStorage.setItem("auth-token", value.accessToken);
         })
       );
   }
