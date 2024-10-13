@@ -91,9 +91,10 @@ export class InfoMovieComponent {
 
   confirmarAluguel() {
     this.requestLoading.set(true);
+    const userId = sessionStorage.getItem("user-id") ?? "";
 
     const dadosAluguel: CriarAluguelRequest = {
-      userId: '501c6864-5ebd-4ab5-8218-25d9c010d833',
+      userId: userId,
       movieId: Number(this.movieId),
       rentalStartDate: this.formatDate(this.dateTimeToday),
       rentalEndDate: this.formatDate(this.dateTimeExpiration),
