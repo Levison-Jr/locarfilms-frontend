@@ -1,1 +1,35 @@
-<p>user-movies works!</p>
+<app-default-layout>
+    <main>
+        <section id="pendentes-section">
+            <div class="container-label-section">
+                <img ngSrc="./icons/play-arrow-icon.svg" width="24" height="24">
+                <span>Pendentes</span>
+            </div>
+
+            <div>
+                @if (!userMoviesCarregados()) {
+                    Carregando...
+                }
+                @else if (userMoviesPendentes.length == 0) {
+                    Nenhum aluguel pendente de retirada!
+                }
+            </div>
+        </section>
+
+        <section id="emProgresso-section">
+            <div class="container-label-section">
+                <img ngSrc="./icons/play-arrow-icon.svg" width="24" height="24">
+                <span>Em Progresso</span>
+            </div>
+
+            <div>
+                @if (!userMoviesCarregados()) {
+                    Carregando...
+                }
+                @else if (userMoviesEmAndamento.length == 0) {
+                    Nenhum aluguel em progresso!
+                }
+            </div>
+        </section>
+    </main>
+</app-default-layout>

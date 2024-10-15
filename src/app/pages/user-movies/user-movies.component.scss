@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    height: 100%;
+    padding: 10px 10px 0;
+    
+    .container-label-section {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 18px;
+    }
+}
