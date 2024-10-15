@@ -27,4 +27,17 @@ export class AluguelService {
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
+
+  buscarAlugueisPorUserId(userId: string) {
+    const token = sessionStorage.getItem('auth-token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this.httpClient.get<AluguelDto[]>(`${this.endpoint}/user/${userId}`, { headers })
+      .pipe(
+        tap((value) => {
+          console.log(value);
+        }),
+        catchError((error) => this.errorHandler.handleError(error))
+      );
+  }
 }
