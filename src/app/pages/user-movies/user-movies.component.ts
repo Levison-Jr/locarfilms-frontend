@@ -49,4 +49,17 @@ export class UserMoviesComponent {
       }
     );
   }
+
+  calcularDataMaximaRetirada(dataString: string | number | Date): string {
+    const d = new Date(dataString);
+    d.setDate(d.getDate() + 1);
+    
+    return d.toLocaleDateString();
+  }
+
+  formatarData(dataString: string | number | Date): string {
+    const d = new Date(dataString);
+    
+    return d.toLocaleDateString();
+  }
 }
