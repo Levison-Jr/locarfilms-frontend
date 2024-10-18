@@ -16,7 +16,7 @@
                 @else {
                     <div class="container-list-user">
                         @for (item of userMoviesPendentes; track item.id) {
-                            <div class="list-user-movies">
+                            <div class="list-user-movies" [attr.data-rental-id]="item.id">
                                 <div>
                                     <div class="list-movie-title">{{item.movie.title}}</div>
                                     <div>Prazo: {{ calcularDataMaximaRetirada(item.rentalStartDate) }}</div>
