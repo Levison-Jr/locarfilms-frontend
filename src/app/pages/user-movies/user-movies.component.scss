@@ -12,4 +12,24 @@ main {
         gap: 5px;
         font-size: 18px;
     }
+
+    .container-list-user {
+        max-height: 30vh;
+        overflow: auto;
+
+        .list-user-movies {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 15px;
+            margin: 10px 0;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.25);
+    
+            .list-movie-title {
+                font-weight: 600;
+            }
+        }
+    }
 }

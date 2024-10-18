@@ -3,7 +3,7 @@
         <section id="pendentes-section">
             <div class="container-label-section">
                 <img ngSrc="./icons/play-arrow-icon.svg" width="24" height="24">
-                <span>Pendentes</span>
+                <span>Aguardando retirada</span>
             </div>
 
             <div>
@@ -12,6 +12,20 @@
                 }
                 @else if (userMoviesPendentes.length == 0) {
                     Nenhum aluguel pendente de retirada!
+                }
+                @else {
+                    <div class="container-list-user">
+                        @for (item of userMoviesPendentes; track item.id) {
+                            <div class="list-user-movies">
+                                <div>
+                                    <div class="list-movie-title">{{item.movie.title}}</div>
+                                    <div>Prazo: {{ calcularDataMaximaRetirada(item.rentalStartDate) }}</div>
+                                </div>
+    
+                                <img ngSrc="./icons/delete-icon.svg" width="24" height="24">
+                            </div>
+                        }
+                    </div>
                 }
             </div>
         </section>
@@ -28,6 +42,18 @@
                 }
                 @else if (userMoviesEmAndamento.length == 0) {
                     Nenhum aluguel em progresso!
+                }
+                @else {
+                    <div class="container-list-user">
+                        @for (item of userMoviesEmAndamento; track item.id) {
+                            <div class="list-user-movies">
+                                <div>
+                                    <div class="list-movie-title">{{item.movie.title}}</div>
+                                    <div>Devolução: {{ formatarData(item.rentalEndDate) }}</div>
+                                </div>
+                            </div>
+                        }
+                    </div>
                 }
             </div>
         </section>
