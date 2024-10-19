@@ -42,7 +42,6 @@ export class UserMoviesComponent {
           this.userMoviesEmAndamento = value.filter(m => m.rentalStatus == AluguelStatusEnum.EmAndamento);
         },
         error: (error) => {
-          this.userMoviesCarregados.set(true);
           console.error(error);
           this.toastr.error(error.message, "FALHA");
         }
