@@ -61,4 +61,20 @@ export class UserMoviesComponent {
     
     return d.toLocaleDateString();
   }
+
+  removerAluguel(aluguelId: number) {
+    console.log('aluguelId', aluguelId);
+
+    this.aluguelService.cancelarAluguel(aluguelId).subscribe(
+      {
+        next: () => {
+          this.userMoviesPendentes = this.userMoviesPendentes.filter(m => m.id != aluguelId);
+        },
+        error: (error) => {
+          console.error(error);
+          this.toastr.error(error.message, "FALHA");
+        }
+      }
+    );
+  }
 }
