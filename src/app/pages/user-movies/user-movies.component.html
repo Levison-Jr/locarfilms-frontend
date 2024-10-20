@@ -22,7 +22,7 @@
                                     <div>Prazo: {{ calcularDataMaximaRetirada(item.rentalStartDate) }}</div>
                                 </div>
     
-                                <img ngSrc="./icons/delete-icon.svg" width="24" height="24">
+                                <img ngSrc="./icons/delete-icon.svg" width="24" height="24" (click)="removerAluguel(item.id)">
                             </div>
                         }
                     </div>
