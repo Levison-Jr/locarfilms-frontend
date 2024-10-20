@@ -40,4 +40,17 @@ export class AluguelService {
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
+
+  cancelarAluguel(aluguelId: number) {
+    const token = sessionStorage.getItem('auth-token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this.httpClient.put(`${this.endpoint}/${aluguelId}`, { }, { headers })
+      .pipe(
+        tap((value) => {
+          console.log(value);
+        }),
+        catchError((error) => this.errorHandler.handleError(error))
+      );
+  }
 }
