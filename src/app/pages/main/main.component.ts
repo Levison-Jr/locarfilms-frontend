@@ -4,6 +4,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
 import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
 import { MovieDto } from '../../types/movie-dto.type';
+import { MovieStatusEnum } from '../../enums/movie-status-enum';
 
 @Component({
   selector: 'app-main',
@@ -27,7 +28,7 @@ export class MainComponent {
       description: "",
       duration: "",
       category: "",
-      status: "isAvailable",
+      status: MovieStatusEnum.isAvailable,
       costPerDay: 2,
       releaseDate: "",
       registrationDateTime: "",
@@ -42,7 +43,7 @@ export class MainComponent {
       description: "",
       duration: "",
       category: "",
-      status: "isAvailable",
+      status: MovieStatusEnum.isAvailable,
       costPerDay: 2,
       releaseDate: "",
       registrationDateTime: "",
@@ -57,7 +58,7 @@ export class MainComponent {
       description: "",
       duration: "",
       category: "",
-      status: "isAvailable",
+      status: MovieStatusEnum.isAvailable,
       costPerDay: 2,
       releaseDate: "",
       registrationDateTime: "",
@@ -75,7 +76,7 @@ export class MainComponent {
       description: "",
       duration: "",
       category: "Ficção Científica",
-      status: "isAvailable",
+      status: MovieStatusEnum.isAvailable,
       costPerDay: 2,
       releaseDate: "",
       registrationDateTime: "",
@@ -90,7 +91,7 @@ export class MainComponent {
       description: "",
       duration: "",
       category: "Comédia",
-      status: "isAvailable",
+      status: MovieStatusEnum.isAvailable,
       costPerDay: 2,
       releaseDate: "",
       registrationDateTime: "",
@@ -105,7 +106,7 @@ export class MainComponent {
       description: "",
       duration: "",
       category: "Drama",
-      status: "isAvailable",
+      status: MovieStatusEnum.isAvailable,
       costPerDay: 2,
       releaseDate: "",
       registrationDateTime: "",
@@ -120,7 +121,7 @@ export class MainComponent {
       description: "",
       duration: "",
       category: "Animação",
-      status: "isAvailable",
+      status: MovieStatusEnum.isAvailable,
       costPerDay: 2,
       releaseDate: "",
       registrationDateTime: "",
