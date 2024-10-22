@@ -35,7 +35,7 @@
                     {{movie.description}}
                 </div>
 
-                <app-button (onClick)="navigateBetweenPages()" btnType="primatyButton">
+                <app-button [disabled]="movie.status != movieStatus.isAvailable" (onClick)="navigateBetweenPages()" btnType="primatyButton">
                     ALUGAR FILME
                 </app-button>
             </section>

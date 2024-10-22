@@ -16,6 +16,7 @@ import { AluguelService } from '../../services/aluguel.service';
 import { CriarAluguelRequest } from '../../types/request/criar-aluguel.type';
 import { AluguelStatusEnum } from '../../enums/aluguel-status-enum';
 import { PagamentoStatusEnum } from '../../enums/pagamento-status-enum';
+import { MovieStatusEnum } from '../../enums/movie-status-enum';
 
 registerLocaleData(ptBr);
 
@@ -41,6 +42,7 @@ registerLocaleData(ptBr);
 })
 export class InfoMovieComponent {
   pageIndex: number = 0;
+  movieStatus = MovieStatusEnum;
 
   movieId: string | null = "";
   movie!: MovieDto;
