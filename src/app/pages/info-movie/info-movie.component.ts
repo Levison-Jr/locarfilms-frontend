@@ -1,6 +1,6 @@
 import { Component, LOCALE_ID, signal } from '@angular/core';
 import { CurrencyPipe, CommonModule } from '@angular/common'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DefaultLayoutComponent } from '../../components/default-layout/default-layout.component';
 import { NgOptimizedImage } from '@angular/common';
 import { ButtonComponent } from '../../components/button/button.component';
@@ -61,7 +61,8 @@ export class InfoMovieComponent {
     private route: ActivatedRoute,
     private movieService: MovieService,
     private aluguelService: AluguelService,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,
+    private router: Router) {
 
     this.rentForm = new FormGroup({
       expirationDate: new FormControl('', [Validators.required])
@@ -109,6 +110,8 @@ export class InfoMovieComponent {
         next: () => {
           this.toastr.success("Seu filme te espera!", "CONFIRMADO");
           this.requestLoading.set(false);
+
+          this.router.navigate(['user-movies']);
         },
         error: () => {
           this.toastr.error("Não foi possível concluir, tente novamente.", "FALHA");
