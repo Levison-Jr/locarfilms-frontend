@@ -1,3 +1,5 @@
+import { MovieStatusEnum } from "../enums/movie-status-enum";
+
 export type MovieDto = {
     id: number,
     title: string,
@@ -5,7 +7,7 @@ export type MovieDto = {
     description: string,
     duration: string,
     category: string,
-    status: MovieStatus,
+    status: MovieStatusEnum,
     costPerDay: number,
     releaseDate: string,
     registrationDateTime: string,
@@ -13,5 +15,3 @@ export type MovieDto = {
     imageBannerUrl: string,
     imageIconUrl: string
 }
-
-export type MovieStatus = "isAvailable" | "isRented" | "forPickup";
