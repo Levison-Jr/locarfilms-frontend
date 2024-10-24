@@ -14,7 +14,7 @@ export class MovieService {
     private httpClient: HttpClient,
     private errorHandler: ErrorHandlerService) { }
 
-  getMovieById(id: string) {
+  buscarPeloId(id: string) {
     return this.httpClient.get<MovieDto>(`${this.endpoint}/${id}`)
       .pipe(
         tap((value) => {
@@ -24,7 +24,7 @@ export class MovieService {
       );
   }
 
-  getAllMovies() {
+  buscarTodos() {
     return this.httpClient.get<MovieDto[]>(this.endpoint)
       .pipe(
         tap((value) => {

@@ -73,7 +73,7 @@ export class InfoMovieComponent {
     this.movieId = this.route.snapshot.paramMap.get("id");
 
     if (this.movieId) {
-      this.movieService.getMovieById(this.movieId).subscribe({
+      this.movieService.buscarPeloId(this.movieId).subscribe({
         next: (value) => {
           this.movie = value;
         },
