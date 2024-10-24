@@ -5,6 +5,8 @@ import { CarouselComponent } from '../../components/carousel/carousel.component'
 import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
 import { MovieDto } from '../../types/movie-dto.type';
 import { MovieStatusEnum } from '../../enums/movie-status-enum';
+import { MovieService } from '../../services/movie.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-main',
@@ -15,10 +17,29 @@ import { MovieStatusEnum } from '../../enums/movie-status-enum';
     CarouselComponent,
     MovieCardComponent
   ],
+  providers: [
+    MovieService
+  ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
+
+  constructor (
+    private movieService: MovieService,
+    private toastr: ToastrService) { }
+
+  ngOnInit() {
+    this.movieService.getAllMovies().subscribe({
+      next: (value) => {
+        console.log(value);
+        this.moviesToExplorer = value;
+      },
+      error: (error) => {
+        this.toastr.error(error.message, "FALHA");
+      }
+    });
+  }
 
   moviesToCarousel: MovieDto[] = [
     {
