@@ -2,7 +2,10 @@
     <main>
         @if (movie) {
             <section id="banner-section">
-                <img id="banner-image" [ngSrc]="movie.imageBannerUrl" fill priority>
+                <img id="banner-image"
+                    [ngSrc]="movie.imageBannerUrl"
+                    (error)="handleImageError($event)"
+                    fill priority>
 
                 <div>
                     <h1>{{movie.title}}</h1>

@@ -86,6 +86,10 @@ export class InfoMovieComponent {
     }
   }
 
+  handleImageError(event: any) {
+    event.target.src = './default-banner-image.jpg';
+  }
+
   navigateBetweenPages() {
     this.pageIndex = this.pageIndex == 0 ? 1 : 0;
   }
