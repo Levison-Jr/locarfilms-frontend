@@ -23,4 +23,14 @@ export class MovieService {
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
+
+  getAllMovies() {
+    return this.httpClient.get<MovieDto[]>(this.endpoint)
+      .pipe(
+        tap((value) => {
+          console.log(value);      
+        }),
+        catchError((error) => this.errorHandler.handleError(error))
+      );
+  }
 }
