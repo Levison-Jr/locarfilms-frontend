@@ -59,6 +59,10 @@ main {
                 &:nth-child(2) {
                     background-color: #34C759;
                 }
+
+                &.flag-alugado {
+                    background-color: #e30000;
+                }
             }
         }
     }

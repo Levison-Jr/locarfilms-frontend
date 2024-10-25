@@ -18,10 +18,18 @@
                         <span>{{movie.category}}</span>
                     </div>
 
-                    <div class="info-tags">
-                        <img ngSrc="./icons/money-icon.svg" width="18" height="18">
-                        <span>{{movie.costPerDay | currency : 'BRL'}} /dia</span>
-                    </div>
+                    @if (movie.status == movieStatus.isRented) {
+                        <div class="info-tags flag-alugado">
+                            <img ngSrc="./icons/error-icon.svg" width="18" height="18">
+                            <span>Alugado</span>
+                        </div>
+                    }
+                    @else {
+                        <div class="info-tags">
+                            <img ngSrc="./icons/money-icon.svg" width="18" height="18">
+                            <span>{{movie.costPerDay | currency : 'BRL'}} /dia</span>
+                        </div>
+                    }
                 </div>
             </section>
 
