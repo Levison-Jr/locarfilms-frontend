@@ -30,7 +30,7 @@ export class MainComponent {
     private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.movieService.buscarTodos().subscribe({
+    this.movieService.buscarTodos("", MovieStatusEnum.isAvailable).subscribe({
       next: (value) => {
         console.log(value);
         this.moviesToExplorer = value;
