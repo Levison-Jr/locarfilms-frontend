@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ErrorHandlerService } from './error-handler.service';
 import { MovieDto } from '../types/movie-dto.type';
 import { catchError, tap } from 'rxjs';
+import { MovieStatusEnum } from '../enums/movie-status-enum';
 
 @Injectable({
   providedIn: 'root'
@@ -18,17 +19,27 @@ export class MovieService {
     return this.httpClient.get<MovieDto>(`${this.endpoint}/${id}`)
       .pipe(
         tap((value) => {
-          console.log(value);      
+          console.log(value);
         }),
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
 
-  buscarTodos() {
-    return this.httpClient.get<MovieDto[]>(this.endpoint)
+  buscarTodos(categoria: string = "", movieStatusFilter: any = null) {
+    let params = new HttpParams();
+
+    if (categoria) {
+      params = params.set('categoryFilter', categoria);
+    }
+
+    if (movieStatusFilter) {
+      params = params.set('movieStatusFilter', movieStatusFilter);
+    }
+
+    return this.httpClient.get<MovieDto[]>(this.endpoint, { params })
       .pipe(
         tap((value) => {
-          console.log(value);      
+          console.log(value);
         }),
         catchError((error) => this.errorHandler.handleError(error))
       );
