@@ -38,4 +38,8 @@ export class DefaultLayoutComponent {
   navigateToUserMoviePage() {
     this.router.navigate(["user-movies"]);
   }
+
+  navigateToUserProfilePage() {
+    this.router.navigate(["user-profile"]);
+  }
 }
