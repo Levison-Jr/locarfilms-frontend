@@ -4,7 +4,7 @@
             <img [src]="movie.imageBannerUrl"
                 [ngClass]="{'image-active': selectedIndex === $index}"
                 class="fade"
-                [attr.data-movie-id]="movie.id">
+                (click)="navigateToMoviePage()">
         }
 
         <div class="btn-carousel btn-next-image">

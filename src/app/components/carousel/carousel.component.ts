@@ -1,10 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MovieDto } from '../../types/movie-dto.type';
-
-interface carouselImage {
-  imageSrc: string
-}
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -20,7 +17,7 @@ export class CarouselComponent {
   @Input() autoSlide: boolean = true;
   @Input() autoSlideTimer: number = 10000;
 
-  constructor() {
+  constructor(private router: Router) {
     if (this.autoSlide) {
       this.autoSlideCarousel();
     }
@@ -48,5 +45,9 @@ export class CarouselComponent {
     else {
       this.selectedIndex--;
     }
+  }
+
+  navigateToMoviePage() {
+    this.router.navigate([`filme/${this.movies[this.selectedIndex].id}`]);
   }
 }
