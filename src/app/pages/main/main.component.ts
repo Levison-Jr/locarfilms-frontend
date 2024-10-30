@@ -43,7 +43,7 @@ export class MainComponent {
 
   moviesToCarousel: MovieDto[] = [
     {
-      id: 1,
+      id: 3,
       title: "Vingadores",
       subTitle: "Guerra Infinita",
       description: "",
@@ -58,7 +58,7 @@ export class MainComponent {
       imageIconUrl: "https://super.abril.com.br/wp-content/uploads/2018/07/site_71.jpg?crop=1&resize=100,75"
     },
     {
-      id: 2,
+      id: 1,
       title: "Divertidamente 2",
       subTitle: "",
       description: "",
