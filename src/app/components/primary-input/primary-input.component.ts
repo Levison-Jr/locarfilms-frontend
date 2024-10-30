@@ -1,5 +1,6 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 type InputType = "text" | "email" | "password" | "date";
 
@@ -7,7 +8,8 @@ type InputType = "text" | "email" | "password" | "date";
   selector: 'app-primary-input',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     {
@@ -24,6 +26,8 @@ export class PrimaryInputComponent implements ControlValueAccessor {
   @Input() placeholder: string = "";
   @Input() label: string = "";
   @Input() inputId: string = "";
+  @Input() disabled: boolean = false;
+  @Input() preValue: string = "";
 
   value: string = "";
   onChange: any = () => {}
