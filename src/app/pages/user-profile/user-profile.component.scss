@@ -1,0 +1,12 @@
+main {
+    padding: 0px 15px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        app-primary-input {
+            margin-top: 15px;
+        }
+    }
+}

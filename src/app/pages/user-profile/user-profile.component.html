@@ -1,1 +1,40 @@
-<p>user-profile works!</p>
+<app-default-layout>
+    <main>
+        @if (user != null) {
+            <form>
+                <app-primary-input
+                    type="email"
+                    inputId="user-email"
+                    label="Email"
+                    [disabled]="true"
+                    [preValue]="user.email">
+    
+                </app-primary-input>
+    
+                <app-primary-input
+                    type="text"
+                    inputId="user-first-name"
+                    label="Nome"
+                    [preValue]="user.firstName" >
+    
+                </app-primary-input>
+    
+                <app-primary-input
+                    inputId="user-last-name"
+                    type="text"
+                    label="Sobrenome"
+                    [preValue]="user.lastName" >
+    
+                </app-primary-input>
+    
+                <app-primary-input
+                    inputId="user-phone-number"
+                    type="text"
+                    label="Celular"
+                    [preValue]="user.phoneNumber" >
+    
+                </app-primary-input>
+            </form>
+        }
+    </main>
+</app-default-layout>
