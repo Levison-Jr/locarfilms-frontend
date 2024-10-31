@@ -4,13 +4,15 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { UserService } from '../../services/user.service';
 import { UserDto } from '../../types/response/user-dto.type';
 import { ToastrService } from 'ngx-toastr';
+import { ButtonComponent } from '../../components/button/button.component';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
   imports: [
     DefaultLayoutComponent,
-    PrimaryInputComponent
+    PrimaryInputComponent,
+    ButtonComponent
   ],
   providers: [
     UserService
@@ -36,5 +38,9 @@ export class UserProfileComponent {
         this.toastr.error(error.message, "FALHA");
       }
     });
+  }
+
+  salvarInfoUser() {
+    console.log('salvarInfoUser');
   }
 }

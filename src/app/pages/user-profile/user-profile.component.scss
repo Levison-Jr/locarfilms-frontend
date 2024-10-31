@@ -1,5 +1,8 @@
 main {
-    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px 15px;
+    height: 100%;
 
     form {
         display: flex;
@@ -8,5 +11,9 @@ main {
         app-primary-input {
             margin-top: 15px;
         }
+    }
+
+    app-button {
+        margin-top: auto;
     }
 }
