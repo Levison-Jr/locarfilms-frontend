@@ -10,7 +10,6 @@ import { ToastrService } from 'ngx-toastr';
 
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AluguelService } from '../../services/aluguel.service';
 import { CriarAluguelRequest } from '../../types/request/criar-aluguel.type';
@@ -28,7 +27,6 @@ registerLocaleData(ptBr);
     NgOptimizedImage,
     ButtonComponent,
     CurrencyPipe,
-    PrimaryInputComponent,
     ReactiveFormsModule,
     CommonModule
   ],
