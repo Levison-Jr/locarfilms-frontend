@@ -1,7 +1,7 @@
 <app-default-layout>
     <main>
         @if (user != null) {
-            <form>
+            <form [formGroup]="userForm">
                 <app-primary-input
                     type="email"
                     inputId="user-email"
@@ -12,6 +12,7 @@
                 </app-primary-input>
     
                 <app-primary-input
+                    formControlName="firstName"
                     type="text"
                     inputId="user-first-name"
                     label="Nome"
@@ -20,6 +21,7 @@
                 </app-primary-input>
     
                 <app-primary-input
+                    formControlName="lastName"
                     inputId="user-last-name"
                     type="text"
                     label="Sobrenome"
@@ -28,6 +30,7 @@
                 </app-primary-input>
     
                 <app-primary-input
+                    formControlName="phoneNumber"
                     inputId="user-phone-number"
                     type="text"
                     label="Celular"
