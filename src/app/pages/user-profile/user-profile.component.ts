@@ -58,7 +58,13 @@ export class UserProfileComponent {
   }
 
   salvarInfoUser() {
-    console.log('salvarInfoUser');
+    if (this.user.firstName === this.userForm.value.firstName &&
+      this.user.lastName === this.userForm.value.lastName &&
+      this.user.phoneNumber === this.userForm.value.phoneNumber) {
+
+        this.toastr.warning("Você não alterou nenhuma informação.", "FALHA");
+        return;
+    }
 
     if (this.userForm.invalid) {
       this.toastr.error("Preencha todas as informações corretamente.", "FALHA");
@@ -78,6 +84,7 @@ export class UserProfileComponent {
     this.userService.atualizarCadastro(userId, dadosUser).subscribe({
       next: (value) => {
         this.toastr.success("Dados atualizados!", "SUCESSO");
+        window.location.reload();
       },
       error: (error) => { this.toastr.error(error.message, "FALHA"); }
     });
