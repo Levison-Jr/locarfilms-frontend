@@ -45,3 +45,21 @@ main {
         }
     }
 }
+
+@media screen and (min-width: 425px) and (max-height: 700px) {
+    main {
+        overflow: auto;
+
+        #destaques-section {
+            height: 70%;
+        }
+
+        #explorar-section {
+
+            #wrapper-movie-cards {
+                height: initial;
+                max-height: 275px;
+            }
+        }
+    }
+}
