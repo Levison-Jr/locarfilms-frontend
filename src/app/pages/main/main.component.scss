@@ -63,3 +63,22 @@ main {
         }
     }
 }
+
+
+@media screen and (min-width: 1000px) {
+    main {
+
+        #explorar-section {
+
+            #wrapper-movie-cards {
+                flex-direction: row;
+                flex-wrap: wrap;
+                overflow: initial;
+
+                app-movie-card {
+                    width: calc(33.3% - 7px);
+                }
+            }
+        }
+    }
+}

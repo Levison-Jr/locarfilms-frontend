@@ -3,175 +3,269 @@
 main {
     height: 100%;
     display: flex;
-    flex-direction: column;
 
-    #banner-section {
+    #main-section {
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: end;
-        padding: 15px;
-        gap: 15px;
 
-        position: relative;
-
-        height: 35%;
-        color: #fff;
-        box-shadow:0px 4px 5px rgba(0, 0, 0, 0.25);
-
-        #banner-image {
-            z-index: -1;
-            object-fit: fill;
-        }
-
-        h1 {
-            font-size: 36px;
-            font-weight: 700;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
-        }
-
-        h2 {
-            font-size: 26px;
-            font-weight: normal;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
-        }
-
-        #wrapper-info-tags {
+        #banner-section {
             display: flex;
-            gap: 10px;
-
-            .info-tags {
-                width: 50%;
-                height: 30px;
-                text-align: center;
-                color: #1D1B20;
-                border-radius: 5px;
-                font-size: 14px;
-                font-weight: 500;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 5px;
-
-                &:first-child {
-                    background-color: #fff;
-                }
-
-                &:nth-child(2) {
-                    background-color: #34C759;
-                }
-
-                &.flag-alugado {
-                    background-color: #e30000;
-                }
+            flex-direction: column;
+            justify-content: end;
+            padding: 15px;
+            gap: 15px;
+    
+            position: relative;
+    
+            height: 35%;
+            color: #fff;
+            box-shadow:0px 4px 5px rgba(0, 0, 0, 0.25);
+    
+            #banner-image {
+                z-index: -1;
+                object-fit: fill;
             }
-        }
-    }
-
-    .hide-section {
-        height: 0 !important;
-        overflow: hidden !important;
-        padding: 0 !important;
-        flex-grow: 0 !important;
-    }
-
-    #detail-section {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        padding: 10px 20px 25px;
-        gap: 15px;
-        overflow: auto;
-
-        h3 {
-            font-size: 20px;
-        }
-
-        .wrapper-info-duration {
-            display: flex;
-            gap: 8px;
-
-            p {
-                font-size: 14px;
+    
+            h1 {
+                font-size: 36px;
+                font-weight: 700;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
             }
-        }
-
-        app-button {
-            margin-top: auto;
-        }
-    }
-
-    #rent-section {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        padding: 10px 20px;
-        gap: 15px;
-        color: $text-color;
-        overflow: auto;
-        transition: height 3s;
-
-        p {
-            color: $secondary-color;
-            margin-bottom: 5px;
-        }
-
-        #container-pick-day {
-            display: none;
-        }
-
-        #wrapper-pick-day {
-            display: flex;
-            justify-content: space-around;
-
-            >div {
+    
+            h2 {
+                font-size: 26px;
+                font-weight: normal;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+            }
+    
+            #wrapper-info-tags {
                 display: flex;
-                gap: 15px;
-
-                >div {
+                gap: 10px;
+    
+                .info-tags {
+                    width: 50%;
+                    height: 30px;
+                    text-align: center;
+                    color: #1D1B20;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    font-weight: 500;
                     display: flex;
-                    flex-direction: column;
-
-                    span {
-                        color: $secondary-color;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+    
+                    &:first-child {
+                        background-color: #fff;
+                    }
+    
+                    &:nth-child(2) {
+                        background-color: #34C759;
+                    }
+    
+                    &.flag-alugado {
+                        background-color: #e30000;
                     }
                 }
             }
         }
-
-        #wrapper-numero-dias {
-            color: $secondary-color;
-
-            #input-numero-dias {
-                width: 10%;
-                text-align: center;
-                border-radius: 5px;
-                border: 1px solid rgba(209.31249797344208, 209.31249797344208, 209.31249797344208, 1);
-                
-                &:focus-visible {
-                    outline: none;
-                }
-            }
+    
+        .hide-section {
+            height: 0 !important;
+            overflow: hidden !important;
+            padding: 0 !important;
+            flex-grow: 0 !important;
         }
-
-        #wrapper-resumo {
+    
+        #detail-section {
             display: flex;
             flex-direction: column;
+            flex-grow: 1;
+            padding: 10px 20px 25px;
             gap: 15px;
-            color: $secondary-color;
+            overflow: auto;
+    
+            h3 {
+                font-size: 20px;
+            }
+    
+            .wrapper-info-duration {
+                display: flex;
+                gap: 8px;
+    
+                p {
+                    font-size: 14px;
+                }
+            }
+    
+            app-button {
+                margin-top: auto;
+            }
+        }
+    
+        #rent-section {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 10px 20px;
+            gap: 15px;
+            color: $text-color;
+            overflow: auto;
+            transition: height 3s;
+    
+            p {
+                color: $secondary-color;
+                margin-bottom: 5px;
+            }
+    
+            #container-pick-day {
+                display: none;
+            }
+    
+            #wrapper-pick-day {
+                display: flex;
+                justify-content: space-around;
+    
+                >div {
+                    display: flex;
+                    gap: 15px;
+    
+                    >div {
+                        display: flex;
+                        flex-direction: column;
+    
+                        span {
+                            color: $secondary-color;
+                        }
+                    }
+                }
+            }
+    
+            #wrapper-numero-dias {
+                color: $secondary-color;
+    
+                #input-numero-dias {
+                    width: 10%;
+                    text-align: center;
+                    border-radius: 5px;
+                    border: 1px solid rgba(209.31249797344208, 209.31249797344208, 209.31249797344208, 1);
+                    
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+            }
+    
+            #wrapper-resumo {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                color: $secondary-color;
+    
+                padding: 15px;
+                border-radius: 20px;
+                border: 1px dashed $primary-color;
+                background-color: $secondary-bg-color;
+                box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
+    
+                >span > span {
+                    font-weight: bold;
+                }
+            }
+    
+            #container-resumo {
+                margin-bottom: auto;
+            }
+        }
+    }
 
-            padding: 15px;
-            border-radius: 20px;
-            border: 1px dashed $primary-color;
-            background-color: $secondary-bg-color;
-            box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
+    #trailler-section {
+        display: none;
+    }
+}
 
-            >span > span {
-                font-weight: bold;
+@media screen and (min-width: 1000px) {
+    main {
+
+        #main-section {
+            width: 35%;
+
+            #detail-section,
+            #rent-section {
+                overflow: initial;
             }
         }
 
-        #container-resumo {
-            margin-bottom: auto;
+        #trailler-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 65%;
+            
+            background: rgb(29,27,32);
+            background: -moz-linear-gradient(180deg, rgba(29,27,32,1) 0%, rgba(27,26,28,1) 40%, rgba(0,0,0,1) 90%);
+            background: -webkit-linear-gradient(180deg, rgba(29,27,32,1) 0%, rgba(27,26,28,1) 40%, rgba(0,0,0,1) 90%);
+            background: linear-gradient(180deg, rgba(29,27,32,1) 0%, rgba(27,26,28,1) 40%, rgba(0,0,0,1) 90%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d1b20",endColorstr="#000000",GradientType=1);
+
+            iframe {
+                width: 80%;
+                height: 60%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1800px) and (min-height: 900px) {
+    main {
+    
+        #main-section {
+    
+            #banner-section {
+        
+                h1 {
+                    font-size: 54px;
+                }
+        
+                h2 {
+                    font-size: 36px;
+                }
+        
+                #wrapper-info-tags {
+        
+                    .info-tags {
+                        height: 34px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        
+            #detail-section {
+        
+                h3 {
+                    font-size: 35px;
+                }
+        
+                .wrapper-info-duration {
+        
+                    p {
+                        font-size: 20px;
+                    }
+                }
+
+                #wrapper-movie-description {
+                    font-size: 22px;
+                }
+            }
+
+            #rent-section {
+                font-size: 24px;
+
+                #input-numero-dias {
+                    font-size: inherit;
+                }              
+            }
         }
     }
 }
