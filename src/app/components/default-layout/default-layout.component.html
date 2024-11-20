@@ -1,6 +1,6 @@
 <main>
     <section id="header-section" [style]="!headerVisible ? 'display: none' : ''">
-        <div><img ngSrc="./icons/menu-icon.svg" width="24" height="24" style="visibility: hidden;"></div>
+        <div id="menu-icon"><img ngSrc="./icons/menu-icon.svg" width="24" height="24"></div>
         <div><img ngSrc="./logo-header.svg" width="153" height="19" priority></div>
         <div (click)="navigateToLoginPage()">
             @if (usuarioAutenticado) {

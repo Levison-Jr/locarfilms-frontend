@@ -13,6 +13,10 @@ main {
         padding: 15px 10px;
         height: 60px;
 
+        #menu-icon {
+            visibility: hidden;
+        }
+
         div {
             display: flex;
             align-items: center;
@@ -40,6 +44,20 @@ main {
             justify-content: center;
             align-items: center;
             gap: 5px;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    main {
+        #header-section {
+
+            #menu-icon {
+                visibility: initial;
+            }
+        }
+        #footer-section {
+            display: none;
         }
     }
 }
