@@ -269,3 +269,39 @@ main {
         }
     }
 }
+
+@media screen and (max-width: 350px) {
+    main {
+    
+        #main-section {
+    
+            #banner-section {
+                padding: 10px 5px;
+                gap: 15px;
+        
+                h1 {
+                    font-size: 24px;
+                }
+        
+                h2 {
+                    font-size: 18px;
+                }
+            }
+
+            #detail-section {
+                padding: 10px 10px 20px;
+        
+                h3 {
+                    font-size: 16px;
+                }
+        
+                .wrapper-info-duration {
+        
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
