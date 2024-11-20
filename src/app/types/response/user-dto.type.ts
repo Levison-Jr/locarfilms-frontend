@@ -4,6 +4,5 @@ export type UserDto = {
     lastName: string,
     userName: string,
     email: string,
-    phoneNumber: string,
-    balance: number
+    phoneNumber: string
 }

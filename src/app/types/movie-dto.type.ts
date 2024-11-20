@@ -13,5 +13,6 @@ export type MovieDto = {
     registrationDateTime: string,
     lastModifiedDateTime: string,
     imageBannerUrl: string,
-    imageIconUrl: string
+    imageIconUrl: string,
+    youTubeTraillerUrl: string
 }
