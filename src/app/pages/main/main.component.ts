@@ -54,8 +54,8 @@ export class MainComponent {
       releaseDate: "",
       registrationDateTime: "",
       lastModifiedDateTime: "",
-      imageBannerUrl: "https://super.abril.com.br/wp-content/uploads/2018/07/site_71.jpg?crop=1&resize=500,300",
-      imageIconUrl: "https://super.abril.com.br/wp-content/uploads/2018/07/site_71.jpg?crop=1&resize=100,75"
+      imageBannerUrl: "https://super.abril.com.br/wp-content/uploads/2018/07/site_71.jpg?crop=1&resize=1920,1080",
+      imageIconUrl: "https://super.abril.com.br/wp-content/uploads/2018/07/site_71.jpg?crop=1&resize=500,300"
     },
     {
       id: 1,
