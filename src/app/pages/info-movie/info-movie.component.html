@@ -111,7 +111,9 @@
             </section>
 
             <section id="trailler-section">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/yAZxx8t9zig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                @if (isDesktopView()) {
+                    <iframe width="560" height="315" [src]="movie.youTubeTraillerUrl | safe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                }
             </section>
         }
         @else if (movieNotFound) {

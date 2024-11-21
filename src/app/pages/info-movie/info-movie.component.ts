@@ -17,6 +17,9 @@ import { AluguelStatusEnum } from '../../enums/aluguel-status-enum';
 import { PagamentoStatusEnum } from '../../enums/pagamento-status-enum';
 import { MovieStatusEnum } from '../../enums/movie-status-enum';
 
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { SafePipe } from '../../pipes/safe.pipe';
+
 registerLocaleData(ptBr);
 
 @Component({
@@ -28,7 +31,8 @@ registerLocaleData(ptBr);
     ButtonComponent,
     CurrencyPipe,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    SafePipe
   ],
   providers: [
     MovieService,
@@ -156,5 +160,9 @@ export class InfoMovieComponent {
     const dia = String(date.getDate()).padStart(2, '0');
 
     return `${ano}-${mes}-${dia}`;
+  }
+
+  isDesktopView() : boolean {
+    return window.innerWidth > 1000;
   }
 }
