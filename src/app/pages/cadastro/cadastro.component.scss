@@ -8,3 +8,12 @@ form {
         height: 24px;
     }
 }
+
+@media screen and (min-width: 1400px) and (min-height: 800px) {
+    form {
+    
+        img {
+            height: 30px;
+        }
+    }
+}

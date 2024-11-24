@@ -33,3 +33,34 @@ main {
         }
     }
 }
+
+@media screen and (min-width: 1400px) and (min-height: 800px) {
+    main {
+        #pendentes-section,
+        #emProgresso-section {
+            font-size: 26px;
+        }
+
+        gap: 20px;
+    
+        padding: 10px 10px 0;
+        
+        .container-label-section {
+            gap: 5px;
+            font-size: 28px;
+        }
+    
+        .container-list-user {
+            max-height: 30vh;
+    
+            .list-user-movies {
+                margin: 20px 0;
+                padding: 10px 15px;
+
+                img {
+                    zoom: 1.5;
+                }
+            }
+        }
+    }
+}
