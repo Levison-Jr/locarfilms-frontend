@@ -61,3 +61,12 @@ main {
         }
     }
 }
+
+@media screen and (min-width: 1800px) and (min-height: 900px) {
+    main {
+        
+        #header-section > div > img {
+            zoom: 1.5
+        }
+    }
+}

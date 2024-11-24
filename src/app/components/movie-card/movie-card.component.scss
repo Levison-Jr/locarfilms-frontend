@@ -37,3 +37,20 @@
         }
     }
 }
+
+@media screen and (min-width: 1800px) and (min-height: 900px) {
+    .container-card {
+        height: 150px;
+
+        .content-card-section {
+    
+            h1 {
+                font-size: 28px;
+            }
+    
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+}

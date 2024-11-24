@@ -88,3 +88,28 @@ main {
         }
     }
 }
+
+@media screen and (min-width: 1800px) and (min-height: 900px) {
+    main {
+        overflow: auto;
+
+        #destaques-section {
+            height: 50%;
+        }
+
+        #explorar-section {
+
+            .container-label-section > span {
+                font-size: 30px;
+            }
+
+            #wrapper-movie-cards {
+                gap: 25px;
+
+                app-movie-card {
+                    width: calc(33.3% - 17px);
+                }
+            }
+        }
+    }
+}
