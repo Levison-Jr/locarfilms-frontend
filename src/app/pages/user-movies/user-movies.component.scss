@@ -36,14 +36,13 @@ main {
 
 @media screen and (min-width: 1400px) and (min-height: 800px) {
     main {
+        gap: 20px;
+        padding: 10px 10px 0;
+        
         #pendentes-section,
         #emProgresso-section {
             font-size: 26px;
         }
-
-        gap: 20px;
-    
-        padding: 10px 10px 0;
         
         .container-label-section {
             gap: 5px;
