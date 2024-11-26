@@ -1,6 +1,37 @@
 <main>
+    <section (click)="openCloseHandlerMenu()" id="menu-section-overlay" [style]="!menuIsOpen ? 'display: none' : ''"></section>
+    
+    <section id="menu-section" [ngClass]="{'menu-visible': menuIsOpen}">
+        <div id="menu-header">
+            <div (click)="openCloseHandlerMenu()">
+                <img ngSrc="./icons/close-icon.svg" width="24" height="24">
+            </div>
+        </div>
+        <div id="menu-items">
+            <div (click)="navigateToMainPage()">
+                <img ngSrc="./icons/home-icon.svg" width="24" height="24">
+                <span>Explorar</span>
+            </div>
+            <span></span>
+            <div (click)="navigateToUserMoviePage()">
+                <img ngSrc="./icons/film-icon.svg" width="24" height="24">
+                <span>Meus Filmes</span>
+            </div>
+            <span></span>
+            <div (click)="navigateToUserProfilePage()">
+                <img ngSrc="./icons/user-icon.svg" width="24" height="24">
+                <span>Perfil</span>
+            </div>
+            <span></span>
+            <div (click)="navigateToImagesRights()">
+                <img ngSrc="./icons/imagesmode-icon.svg" width="24" height="24">
+                <span>Direitos das Imagens</span>
+            </div>
+        </div>
+    </section>
+
     <section id="header-section" [style]="!headerVisible ? 'display: none' : ''">
-        <div id="menu-icon"><img ngSrc="./icons/menu-icon.svg" width="24" height="24"></div>
+        <div (click)="openCloseHandlerMenu()" id="menu-icon"><img ngSrc="./icons/menu-icon.svg" width="24" height="24"></div>
         <div><img ngSrc="./logo-header.svg" width="153" height="19" priority></div>
         <div (click)="navigateToLoginPage()">
             @if (usuarioAutenticado) {

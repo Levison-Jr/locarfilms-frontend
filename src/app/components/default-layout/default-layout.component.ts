@@ -1,4 +1,4 @@
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage, CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { IdentityService } from '../../services/identity.service';
@@ -7,7 +7,8 @@ import { IdentityService } from '../../services/identity.service';
   selector: 'app-default-layout',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    CommonModule
   ],
   providers: [
     IdentityService
@@ -26,6 +27,11 @@ export class DefaultLayoutComponent {
     this.usuarioAutenticado = sessionStorage.getItem("auth-token") !== null;
   }
 
+  menuIsOpen = false;
+  openCloseHandlerMenu() {
+    this.menuIsOpen = !this.menuIsOpen;
+  }
+
   navigateToLoginPage() {
     this.identityService.logout();
     this.router.navigate(["login"]);
@@ -41,5 +47,9 @@ export class DefaultLayoutComponent {
 
   navigateToUserProfilePage() {
     this.router.navigate(["user-profile"]);
+  }
+
+  navigateToImagesRights() {
+    
   }
 }
