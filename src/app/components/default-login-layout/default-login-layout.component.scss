@@ -89,6 +89,19 @@ main {
     }
 }
 
+@media screen and (min-width: 1000px) and (min-height: 580px) {
+    main {
+
+        .form-section {
+            padding: 10px 20px;
+
+            img {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 1300px) and (min-height: 800px) {
     main {
 
