@@ -89,19 +89,6 @@ main {
     }
 }
 
-@media screen and (min-width: 1000px) and (min-height: 580px) {
-    main {
-
-        .form-section {
-            padding: 10px 20px;
-
-            img {
-                margin-top: 0;
-            }
-        }
-    }
-}
-
 @media screen and (min-width: 1300px) and (min-height: 800px) {
     main {
 
@@ -113,6 +100,20 @@ main {
                 button {
                     font-size: 32px;
                 }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1000px) and (min-height: 580px) and (max-height: 799px) {
+    main {
+
+        .form-section {
+            padding: 10px 20px;
+
+            img {
+                margin-top: 0;
             }
         }
     }
