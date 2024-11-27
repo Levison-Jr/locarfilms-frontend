@@ -42,12 +42,12 @@ main {
         #menu-items {
             display: flex;
             flex-direction: column;
-            gap: 20px;
 
             div {
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                padding: 20px 0;
             }
 
             &>span {
