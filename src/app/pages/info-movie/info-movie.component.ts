@@ -165,4 +165,8 @@ export class InfoMovieComponent {
   isDesktopView() : boolean {
     return window.innerWidth > 1000;
   }
+
+  navigateToMainPage() {
+    this.router.navigate([""]);
+  }
 }

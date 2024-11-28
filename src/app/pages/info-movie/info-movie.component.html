@@ -3,6 +3,9 @@
         @if (movie) {
             <section id="main-section">
                 <section id="banner-section">
+                    <div id="back-icon-wrapper" (click)="navigateToMainPage()" [style]="!isDesktopView() ? 'display: none;' : ''">
+                        <img ngSrc="./icons/arrow-circle-left-icon.svg" width="18" height="18">
+                    </div>
                     <img id="banner-image"
                         [ngSrc]="movie.imageBannerUrl || './default-banner-image.jpg'"
                         (error)="handleImageError($event)"
