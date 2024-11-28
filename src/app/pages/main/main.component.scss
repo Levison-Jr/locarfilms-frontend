@@ -80,9 +80,10 @@ main {
                 flex-direction: row;
                 flex-wrap: wrap;
                 overflow: initial;
+                gap: 16px;
 
                 app-movie-card {
-                    width: calc(33.3% - 7px);
+                    width: calc(33.3% - 11px);
                 }
             }
         }

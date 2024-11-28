@@ -56,7 +56,21 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .btn-carousel {
-        cursor: pointer;
+    .container-carousel {
+        .btn-carousel {
+            cursor: pointer;
+        }
+
+        .icon-carousel {
+            font-size: 40px;
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .container-carousel {
+        .icon-carousel {
+            font-size: 55px;
+        }
     }
 }

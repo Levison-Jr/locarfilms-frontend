@@ -17,3 +17,15 @@ main {
         margin-top: auto;
     }
 }
+
+@media screen and (min-width: 1300px) and (min-height: 600px) {
+    main {
+        width: 60%;
+        height: 90%;
+        margin: 5dvh auto 0;
+        padding: 20px 15px;
+        border: 1px solid rgb(209, 209, 209);
+        border-radius: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+}
