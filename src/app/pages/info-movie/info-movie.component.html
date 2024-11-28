@@ -4,7 +4,7 @@
             <section id="main-section">
                 <section id="banner-section">
                     <img id="banner-image"
-                        [ngSrc]="movie.imageBannerUrl"
+                        [ngSrc]="movie.imageBannerUrl || './default-banner-image.jpg'"
                         (error)="handleImageError($event)"
                         fill priority>
     
