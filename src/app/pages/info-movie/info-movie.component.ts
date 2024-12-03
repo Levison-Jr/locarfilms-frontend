@@ -94,6 +94,10 @@ export class InfoMovieComponent {
 
   navigateBetweenPages() {
     this.pageIndex = this.pageIndex == 0 ? 1 : 0;
+
+    if (this.pageIndex == 1 && !sessionStorage.getItem("auth-token")) {
+      this.router.navigate(["login"]);
+    }
   }
 
   requestLoading = signal(false);
