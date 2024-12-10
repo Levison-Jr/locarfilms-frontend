@@ -47,7 +47,7 @@
 
     <section id="header-section" [style]="!headerVisible ? 'display: none' : ''">
         <div (click)="openCloseHandlerMenu()" id="menu-icon"><img ngSrc="./icons/menu-icon.svg" width="24" height="24"></div>
-        <div><img ngSrc="./logo-header.svg" width="153" height="19" priority></div>
+        <div (click)="navigateToMainPage()"><img ngSrc="./logo-header.svg" width="153" height="19" priority></div>
         <div (click)="navigateToLoginPage()">
             @if (usuarioAutenticado) {
                 <img ngSrc="./icons/logout-icon.svg" width="24" height="24">
