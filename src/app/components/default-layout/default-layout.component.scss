@@ -56,6 +56,33 @@ main {
                 background-color: rgb(142 142 142 / 70%);
             }
         }
+
+        #menu-footer {
+            margin-top: auto;
+            font-size: 0.9em;
+            color: #4d4d4d;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            #autor-name {
+                text-decoration: underline;
+            }
+
+            a {
+                color: #4d4d4d;
+                text-decoration: none;
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                }
+            }
+        }
     }
 
     #menu-section-overlay {
