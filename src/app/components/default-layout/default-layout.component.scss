@@ -156,16 +156,18 @@ main {
 
 @media screen and (min-width: 1700px) and (min-height: 800px) {
     main {
-        #menu-section {
-            font-size: 24px;
+        font-size: 24px;
 
+        #menu-section {
             img {
                 zoom: 1.5;
             }
         }
         
-        #header-section > div > img {
-            zoom: 1.5
+        #header-section {
+            div > img {
+                zoom: 1.5
+            }
         }
     }
 }
