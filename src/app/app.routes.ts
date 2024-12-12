@@ -6,6 +6,7 @@ import { InfoMovieComponent } from './pages/info-movie/info-movie.component';
 import { UserMoviesComponent } from './pages/user-movies/user-movies.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { ImagesRightsComponent } from './pages/images-rights/images-rights.component';
 
 export const routes: Routes = [
     {
@@ -33,5 +34,9 @@ export const routes: Routes = [
         path: "user-profile",
         component: UserProfileComponent,
         canActivate: [AuthGuardService]
+    },
+    {
+        path: "images-rights",
+        component: ImagesRightsComponent
     }
 ];

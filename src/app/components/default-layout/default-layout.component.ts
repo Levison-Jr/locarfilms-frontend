@@ -50,6 +50,6 @@ export class DefaultLayoutComponent {
   }
 
   navigateToImagesRights() {
-    
+    this.router.navigate(["images-rights"]);
   }
 }
