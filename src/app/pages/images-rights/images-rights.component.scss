@@ -1,0 +1,30 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+    img {
+        width: 100px;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    main {
+        max-width: 40%;
+        margin: 0 auto;
+        gap: 40px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    main > img{
+        width: 150px;
+    }
+}
