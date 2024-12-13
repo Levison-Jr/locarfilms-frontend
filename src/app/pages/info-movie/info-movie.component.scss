@@ -129,6 +129,11 @@ main {
                     }
                 }
             }
+
+            #wrapper-movie-description {
+                flex-grow: 1;
+                overflow: auto;
+            }
     
             app-button {
                 margin-top: auto;
@@ -206,7 +211,8 @@ main {
             }
     
             #container-resumo {
-                margin-bottom: auto;
+                flex-grow: 1;
+                overflow: auto;
             }
         }
     }
