@@ -4,6 +4,22 @@ main {
     height: 100%;
     display: flex;
 
+    .back-icon-wrapper {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+
+        display: flex;
+        background-color: #ffffffa6;
+        border-radius: 5px;
+        padding: 2px;
+
+        img {
+            zoom: 1.5;
+        }
+    }
+
     #main-section {
         height: 100%;
         display: flex;
@@ -21,22 +37,6 @@ main {
             height: 35%;
             color: #fff;
             box-shadow:0px 4px 5px rgba(0, 0, 0, 0.25);
-
-            #back-icon-wrapper {
-                position: absolute;
-                top: 15px;
-                left: 15px;
-                cursor: pointer;
-
-                display: flex;
-                background-color: #ffffffa6;
-                border-radius: 5px;
-                padding: 2px;
-
-                img {
-                    zoom: 1.5;
-                }
-            }
     
             #banner-image {
                 z-index: -1;
@@ -105,13 +105,28 @@ main {
             h3 {
                 font-size: 20px;
             }
-    
-            .wrapper-info-duration {
+
+            #wrapper-info {
                 display: flex;
-                gap: 8px;
-    
-                p {
-                    font-size: 14px;
+                justify-content: space-between;
+                align-items: center;
+
+                span {
+                    padding: 5px;
+                    border-radius: 10px;
+                    border-style: double;
+                    border-color: #8142FF;
+                    color: #4500cf;
+                    background-color: #e5d8ff;
+                }
+
+                .wrapper-info-duration {
+                    display: flex;
+                    gap: 8px;
+        
+                    p {
+                        font-size: 14px;
+                    }
                 }
             }
     
@@ -198,6 +213,20 @@ main {
 
     #trailler-section {
         display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+        background: rgb(29,27,32);
+        background: -moz-linear-gradient(180deg, rgba(29,27,32,1) 0%, rgba(27,26,28,1) 40%, rgba(0,0,0,1) 90%);
+        background: -webkit-linear-gradient(180deg, rgba(29,27,32,1) 0%, rgba(27,26,28,1) 40%, rgba(0,0,0,1) 90%);
+        background: linear-gradient(180deg, rgba(29,27,32,1) 0%, rgba(27,26,28,1) 40%, rgba(0,0,0,1) 90%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d1b20",endColorstr="#000000",GradientType=1);
+
+        iframe {
+            width: 95%;
+            height: 45%;
+        }
     }
 }
 

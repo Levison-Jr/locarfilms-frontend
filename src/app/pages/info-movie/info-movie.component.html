@@ -1,9 +1,9 @@
 <app-default-layout [headerVisible]="false">
     <main>
         @if (movie) {
-            <section id="main-section">
+            <section id="main-section" [style]="isTraillerVisible ? 'display: none' : ''">
                 <section id="banner-section">
-                    <div id="back-icon-wrapper" (click)="navigateToMainPage()" [style]="!isDesktopView() ? 'display: none;' : ''">
+                    <div class="back-icon-wrapper" (click)="navigateToMainPage()" [style]="!isDesktopView() ? 'display: none;' : ''">
                         <img ngSrc="./icons/arrow-circle-left-icon.svg" width="18" height="18">
                     </div>
                     <img id="banner-image"
@@ -38,11 +38,17 @@
                 </section>
     
                 <section id="detail-section" [ngClass]="{'hide-section': pageIndex == 1}">
-                    <div>
-                        <h3>Lançamento {{movie.releaseDate.split("-")[0]}}</h3>
-                        <div class="wrapper-info-duration">
-                            <img src="./icons/clock-icon.svg">
-                            <p>{{movie.duration.split(":")[0].replace("0","")}} hora(s) e {{movie.duration.split(":")[1]}} minuto(s)</p>
+                    <div id="wrapper-info">
+                        <div>
+                            <h3>Lançamento {{movie.releaseDate.split("-")[0]}}</h3>
+                            <div class="wrapper-info-duration">
+                                <img src="./icons/clock-icon.svg">
+                                <p>{{movie.duration.split(":")[0].replace("0","")}} hora(s) e {{movie.duration.split(":")[1]}} minuto(s)</p>
+                            </div>
+                        </div>
+
+                        <div (click)="changeTraillerVisibility()" [style]="isDesktopView() ? 'display: none' : ''">
+                            <span>Trailer</span>
                         </div>
                     </div>
     
@@ -113,8 +119,12 @@
                 </section>
             </section>
 
-            <section id="trailler-section">
-                @if (isDesktopView()) {
+            <section id="trailler-section" [style]="isTraillerVisible ? 'display: flex' : ''">
+                <div class="back-icon-wrapper" (click)="changeTraillerVisibility()" [style]="!isTraillerVisible ? 'display: none;' : ''">
+                    <img ngSrc="./icons/arrow-circle-left-icon.svg" width="18" height="18">
+                </div>
+
+                @if (isDesktopView() || isTraillerVisible) {
                     <iframe width="560" height="315" [src]="movie.youTubeTraillerUrl | safe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 }
             </section>

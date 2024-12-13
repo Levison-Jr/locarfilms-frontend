@@ -170,6 +170,12 @@ export class InfoMovieComponent {
     return window.innerWidth > 1000;
   }
 
+  isTraillerVisible: boolean = false;
+  changeTraillerVisibility() {
+    this.isTraillerVisible = !this.isTraillerVisible;
+    return this.isTraillerVisible;
+  }
+
   navigateToMainPage() {
     this.router.navigate([""]);
   }
