@@ -123,8 +123,12 @@ export class InfoMovieComponent {
 
           this.router.navigate(['user-movies']);
         },
-        error: () => {
-          this.toastr.error("Não foi possível concluir, tente novamente.", "FALHA");
+        error: (error) => {
+          if (error.message.includes("NÃO FINALIZADO"))
+            this.toastr.warning('Este filme já está alugado!', "FALHA");
+          else
+            this.toastr.error(error.message, "FALHA");
+
           this.requestLoading.set(false);
         }
       });
