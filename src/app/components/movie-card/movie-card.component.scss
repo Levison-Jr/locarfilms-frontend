@@ -10,6 +10,8 @@
     border: 1px solid #D1D1D1;
     cursor: pointer;
 
+    transition: transform 0.3s ease;
+
     .content-card-section {
         width: 65%;
         display: flex;
@@ -43,8 +45,6 @@
     .container-card:hover {
         transform: scale(1.1);
         box-shadow: 0 0 5px #8142ff9c;
-        z-index: 1;
-        transition: transform 0.3s ease;
     }
 }
 
