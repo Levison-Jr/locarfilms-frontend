@@ -81,6 +81,7 @@ main {
                 flex-wrap: wrap;
                 overflow: initial;
                 gap: 16px;
+                padding: 0 10px;
 
                 app-movie-card {
                     width: calc(33.3% - 11px);
@@ -106,6 +107,7 @@ main {
 
             #wrapper-movie-cards {
                 gap: 25px;
+                padding: 0 20px;
 
                 app-movie-card {
                     width: calc(33.3% - 17px);

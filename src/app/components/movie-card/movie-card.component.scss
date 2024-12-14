@@ -39,6 +39,15 @@
     }
 }
 
+@media screen and (min-width: 1000px) {
+    .container-card:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 5px #8142ff9c;
+        z-index: 1;
+        transition: transform 0.3s ease;
+    }
+}
+
 @media screen and (min-width: 1700px) and (min-height: 800px) {
     .container-card {
         height: 150px;
