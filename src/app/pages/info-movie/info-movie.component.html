@@ -102,9 +102,8 @@
                             @else {
                                 <span>Duração: <span>{{ totalDays }}</span> <span> dia(s)</span></span>
                                 <span>Valor total: <span>{{ totalValue | currency : 'BRL' }}</span></span>
+                                <span>Retirar até: <span>{{ dateTimeTomorrow.toLocaleDateString() }}</span></span>
                                 <span>Devolução: <span>{{ dateTimeExpiration.toLocaleDateString() }}</span></span>
-                                
-                                <span>A retirada do filme deverá ser feita até amanhã ({{ dateTimeTomorrow.toLocaleDateString() }}). Caso contrário, o aluguel será cancelado.</span>
                             }
                         </div>
                     </div>
