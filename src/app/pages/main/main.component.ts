@@ -43,7 +43,7 @@ export class MainComponent {
 
   moviesToCarousel: MovieDto[] = [
     {
-      id: 3,
+      id: 21,
       title: "Vingadores",
       subTitle: "Guerra Infinita",
       description: "",
@@ -59,7 +59,7 @@ export class MainComponent {
       youTubeTraillerUrl: ""
     },
     {
-      id: 1,
+      id: 22,
       title: "Divertidamente 2",
       subTitle: "",
       description: "",
@@ -75,7 +75,7 @@ export class MainComponent {
       youTubeTraillerUrl: ""
     },
     {
-      id: 2,
+      id: 23,
       title: "Um Lugar Silencioso 2",
       subTitle: "",
       description: "",
