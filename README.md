@@ -1,27 +1,34 @@
-# LocarfilmsFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+# LOCAR FILMS [Front-end]
 
-## Development server
+Como complemento aos meus estudos no backend, comecei a estudar Angular para criar o frontend do meu projeto pessoal sobre uma locadora, o Locar Films.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O backend foi feito com C#|.NET. Para mais detalhes, veja o repositório [aqui no GitHub](https://github.com/Levison-Jr/locarfilms-backend).
 
-## Code scaffolding
+Agora sobre esta parte, o client-side, deixo um pouco mais sobre abaixo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# 📋 O projeto
 
-## Build
+Atualmente, está consumindo a Web API para apresentar funcionalidades como:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Cadastro de usuários;
+- Login (Autenticação e autorização com JWT);
+- Exposição dos filmes disponíveis no catálogo;
+- Página com detalhes do filme selecionado, como sinopse e trailer, sendo possível alugar o filme;
+- Página com os filmes atualmente alugados do usuário autenticado;
+- Página para visualizar e editar informações do usuário autenticado.
 
-## Running unit tests
+# ⚙️Tecnologias utilizadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- JavaScript / TypeScript
+- HTML e SCSS
+- [Angular v18.2.0](https://v18.angular.dev/)
 
-## Running end-to-end tests
+# 📌 Pontos abordados
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Rotas verificadas com [**CanActivate | AuthGuard**](https://angular.dev/api/router/CanActivate) para garantir acesso somente após autenticação;
+- Uso de **DTOs e Enums** para melhor lidar com o corpo de requisições e repostas;
+- Utilização de [**Signals**](https://angular.dev/guide/signals) quando foi necessário "rastrear" mudanças em determinado componente para tomar ações necessárias;
+- Diretiva [**NgOptmizeImage**](https://vidafullstack.com.br/angular/ngoptimizedimage-otimizacao-de-imagem-com-angular/) para otimização das imagens;
+- **HttpClient** em requisições para a API.
+- [**Pipes**](https://angular.dev/guide/templates/pipes) para lidar com o tratamento de um recurso antes de ser utilizado dinamicamente (Exemplo: *SafeResourceUrl:* Tratamento de Url).
