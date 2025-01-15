@@ -41,6 +41,9 @@ export class ErrorHandlerService {
       else if (error.status === 404) {
         errorMessage = "Não encontrado.";
       }
+      else if (error.status === 429) {
+        errorMessage = "Você fez muitas requisições. Aguarde um instante!";
+      }
     }
   
     return throwError(() => new Error(errorMessage));
