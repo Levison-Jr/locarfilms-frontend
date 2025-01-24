@@ -42,7 +42,9 @@ export class ErrorHandlerService {
         errorMessage = "Não encontrado.";
       }
       else if (error.status === 429) {
-        errorMessage = "Você fez muitas requisições. Aguarde um instante!";
+        errorMessage = !sessionStorage.getItem("auth-token") ?
+          "Houve muitas requisições. Aguarde ou faça seu cadastro. É simples e rápido.":
+          "Você fez muitas requisições. Aguarde um instante!";
       }
     }
   
