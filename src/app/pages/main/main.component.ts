@@ -54,8 +54,8 @@ export class MainComponent {
       releaseDate: "",
       registrationDateTime: "",
       lastModifiedDateTime: "",
-      imageBannerUrl: "https://image.tmdb.org/t/p/original/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg",
-      imageIconUrl: "https://image.tmdb.org/t/p/original/tstLvhcR281FF3b8iZs7vN2voE9.jpg",
+      imageBannerUrl: "https://image.tmdb.org/t/p/w780/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg",
+      imageIconUrl: "https://image.tmdb.org/t/p/w185/tstLvhcR281FF3b8iZs7vN2voE9.jpg",
       youTubeTraillerUrl: ""
     },
     {
@@ -70,8 +70,8 @@ export class MainComponent {
       releaseDate: "",
       registrationDateTime: "",
       lastModifiedDateTime: "",
-      imageBannerUrl: "https://image.tmdb.org/t/p/original/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg",
-      imageIconUrl: "https://image.tmdb.org/t/p/original/5w90NKW3pzurPMzNdzZmlto5Bt5.jpg",
+      imageBannerUrl: "https://image.tmdb.org/t/p/w780/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg",
+      imageIconUrl: "https://image.tmdb.org/t/p/w185/5w90NKW3pzurPMzNdzZmlto5Bt5.jpg",
       youTubeTraillerUrl: ""
     },
     {
@@ -86,8 +86,8 @@ export class MainComponent {
       releaseDate: "",
       registrationDateTime: "",
       lastModifiedDateTime: "",
-      imageBannerUrl: "https://image.tmdb.org/t/p/original/i5IPrDQ8VevRKJPpLdmyvSLqtbr.jpg",
-      imageIconUrl: "https://image.tmdb.org/t/p/original/sudgADOF0REnpM1GnU6DgSHV0QZ.jpg",
+      imageBannerUrl: "https://image.tmdb.org/t/p/w780/i5IPrDQ8VevRKJPpLdmyvSLqtbr.jpg",
+      imageIconUrl: "https://image.tmdb.org/t/p/w185/sudgADOF0REnpM1GnU6DgSHV0QZ.jpg",
       youTubeTraillerUrl: ""
     }
   ];

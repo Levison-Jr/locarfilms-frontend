@@ -39,7 +39,9 @@ export class MovieService {
     return this.httpClient.get<MovieDto[]>(this.endpoint, { params })
       .pipe(
         tap((value) => {
-          console.log(value);
+          for (let i in value) {
+            value[i].imageIconUrl = value[i].imageIconUrl.replace('original', 'w185');
+          }
         }),
         catchError((error) => this.errorHandler.handleError(error))
       );
