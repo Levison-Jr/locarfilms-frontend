@@ -17,7 +17,6 @@ import { AluguelStatusEnum } from '../../enums/aluguel-status-enum';
 import { PagamentoStatusEnum } from '../../enums/pagamento-status-enum';
 import { MovieStatusEnum } from '../../enums/movie-status-enum';
 
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { SafePipe } from '../../pipes/safe.pipe';
 
 registerLocaleData(ptBr);
@@ -124,10 +123,16 @@ export class InfoMovieComponent {
           this.router.navigate(['user-movies']);
         },
         error: (error) => {
-          if (error.message.includes("NÃO FINALIZADO"))
+          if (error.message.includes("NÃO FINALIZADO")) {
             this.toastr.warning('Este filme já está alugado!', "FALHA");
-          else
+          }
+          else if (error.message.includes("token")) {
             this.toastr.error(error.message, "FALHA");
+            this.router.navigate(['login']);
+          }
+          else {
+            this.toastr.error(error.message, "FALHA");
+          }
 
           this.requestLoading.set(false);
         }

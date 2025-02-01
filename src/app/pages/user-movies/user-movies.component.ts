@@ -5,6 +5,7 @@ import { AluguelService } from '../../services/aluguel.service';
 import { AluguelDto } from '../../types/aluguel-dto.type';
 import { ToastrService } from 'ngx-toastr';
 import { AluguelStatusEnum } from '../../enums/aluguel-status-enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-movies',
@@ -23,7 +24,8 @@ export class UserMoviesComponent {
 
   constructor (
     private aluguelService: AluguelService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private router: Router) { }
   
   userMoviesCarregados = signal(false);
   userMovies: AluguelDto[] = [];
@@ -42,8 +44,10 @@ export class UserMoviesComponent {
           this.userMoviesEmAndamento = value.filter(m => m.rentalStatus == AluguelStatusEnum.EmAndamento);
         },
         error: (error) => {
-          console.error(error);
           this.toastr.error(error.message, "FALHA");
+
+          if (error.message?.includes('token'))
+            this.router.navigate(["login"]);
         }
       }
     );

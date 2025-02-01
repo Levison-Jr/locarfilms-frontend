@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ButtonComponent } from '../../components/button/button.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AtualizarUserRequest } from '../../types/request/atualizar-user.type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -28,7 +29,8 @@ export class UserProfileComponent {
 
   constructor(
     private userService: UserService,
-    private toastr: ToastrService)
+    private toastr: ToastrService,
+    private router: Router)
     {
       this.userForm = new FormGroup({
         firstName: new FormControl(''),
@@ -53,6 +55,9 @@ export class UserProfileComponent {
       },
       error: (error) => {
         this.toastr.error(error.message, "FALHA");
+        
+        if (error.message?.includes('token'))
+          this.router.navigate(["login"]);
       }
     });
   }
