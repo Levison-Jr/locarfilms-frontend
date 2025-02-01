@@ -38,6 +38,10 @@ export class ErrorHandlerService {
           errorMessage = backendError.detail;
         }
       }
+      else if (error.status === 401) {
+        const invalidToken = error.headers.get("WWW-Authenticate")?.includes('invalid_token');
+        errorMessage = invalidToken ? 'Seu token expirou, faça login novamente.' : 'Acesso não autorizado!';
+      }
       else if (error.status === 404) {
         errorMessage = "Não encontrado.";
       }
