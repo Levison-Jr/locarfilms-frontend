@@ -9,7 +9,7 @@ import { AluguelDto } from '../types/aluguel-dto.type';
   providedIn: 'root'
 })
 export class AluguelService {
-  endpoint: string = "https://localhost:7141/api/Rental";
+  endpoint: string = "https://locarfilms.runasp.net/api/Rental";
 
   constructor(
     private httpClient: HttpClient,
