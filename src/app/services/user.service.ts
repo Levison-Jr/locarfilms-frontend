@@ -9,7 +9,7 @@ import { AtualizarUserRequest } from '../types/request/atualizar-user.type';
   providedIn: 'root'
 })
 export class UserService {
-  endpoint: string = "https://localhost:7141/api/Users";
+  endpoint: string = "https://locarfilms.runasp.net/api/Users";
 
   constructor(
     private httpClient: HttpClient,

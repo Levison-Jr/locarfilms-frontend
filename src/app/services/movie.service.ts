@@ -9,7 +9,7 @@ import { MovieStatusEnum } from '../enums/movie-status-enum';
   providedIn: 'root'
 })
 export class MovieService {
-  endpoint: string = "https://localhost:7141/api/Movies";
+  endpoint: string = "https://locarfilms.runasp.net/api/Movies";
 
   constructor(
     private httpClient: HttpClient,
