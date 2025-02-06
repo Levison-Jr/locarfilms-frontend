@@ -9,7 +9,7 @@ import { AluguelDto } from '../types/aluguel-dto.type';
   providedIn: 'root'
 })
 export class AluguelService {
-  endpoint: string = "https://locarfilms.runasp.net/api/Rental";
+  endpoint: string = "https://localhost:7141/api/Rental";
 
   constructor(
     private httpClient: HttpClient,
@@ -21,9 +21,7 @@ export class AluguelService {
 
     return this.httpClient.post<AluguelDto>(this.endpoint, criarAluguelRequest, { headers })
       .pipe(
-        tap((value) => {
-          console.log(value);
-        }),
+        tap(),
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
@@ -34,9 +32,7 @@ export class AluguelService {
 
     return this.httpClient.get<AluguelDto[]>(`${this.endpoint}/user/${userId}`, { headers })
       .pipe(
-        tap((value) => {
-          console.log(value);
-        }),
+        tap(),
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
@@ -47,9 +43,7 @@ export class AluguelService {
 
     return this.httpClient.put(`${this.endpoint}/${aluguelId}`, { }, { headers })
       .pipe(
-        tap((value) => {
-          console.log(value);
-        }),
+        tap(),
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
