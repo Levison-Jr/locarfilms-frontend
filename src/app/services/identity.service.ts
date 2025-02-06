@@ -9,8 +9,8 @@ import { ErrorHandlerService } from './error-handler.service';
   providedIn: 'root'
 })
 export class IdentityService {
-  endpointLogin: string = "https://locarfilms.runasp.net/api/Users/login";
-  endpointCadastro: string = "https://locarfilms.runasp.net/api/Users/register";
+  endpointLogin: string = "https://localhost:7141/api/Users/login";
+  endpointCadastro: string = "https://localhost:7141/api/Users/register";
 
   constructor(private httpClient: HttpClient, private errorHandler: ErrorHandlerService) { }
 
