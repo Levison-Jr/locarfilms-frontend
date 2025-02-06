@@ -67,8 +67,6 @@ export class UserMoviesComponent {
   }
 
   removerAluguel(aluguelId: number) {
-    console.log('aluguelId', aluguelId);
-
     this.aluguelService.cancelarAluguel(aluguelId).subscribe(
       {
         next: () => {

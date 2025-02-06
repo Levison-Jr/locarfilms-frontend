@@ -21,9 +21,7 @@ export class AluguelService {
 
     return this.httpClient.post<AluguelDto>(this.endpoint, criarAluguelRequest, { headers })
       .pipe(
-        tap((value) => {
-          console.log(value);
-        }),
+        tap(),
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
@@ -34,9 +32,7 @@ export class AluguelService {
 
     return this.httpClient.get<AluguelDto[]>(`${this.endpoint}/user/${userId}`, { headers })
       .pipe(
-        tap((value) => {
-          console.log(value);
-        }),
+        tap(),
         catchError((error) => this.errorHandler.handleError(error))
       );
   }
@@ -47,9 +43,7 @@ export class AluguelService {
 
     return this.httpClient.put(`${this.endpoint}/${aluguelId}`, { }, { headers })
       .pipe(
-        tap((value) => {
-          console.log(value);
-        }),
+        tap(),
         catchError((error) => this.errorHandler.handleError(error))
       );
   }

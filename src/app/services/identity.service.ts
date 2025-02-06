@@ -18,7 +18,6 @@ export class IdentityService {
     return this.httpClient.post<LoginResponse>(this.endpointLogin, { email, password })
       .pipe(tap(
         (value) => {
-          console.log(value);
           sessionStorage.setItem("user-id", value.userId);
           sessionStorage.setItem("auth-token", value.accessToken);
         })
