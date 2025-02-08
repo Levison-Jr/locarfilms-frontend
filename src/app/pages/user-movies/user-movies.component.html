@@ -1,4 +1,4 @@
-<app-default-layout>
+<app-default-layout [loadingOverlayVisible]="!userMoviesCarregados() || requestLoading()">
     <main>
         <section id="pendentes-section">
             <div class="container-label-section">

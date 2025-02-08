@@ -1,4 +1,4 @@
-<app-default-layout>
+<app-default-layout [loadingOverlayVisible]="requestLoading()">
     <main>
         @if (user != null) {
             <form [formGroup]="userForm">

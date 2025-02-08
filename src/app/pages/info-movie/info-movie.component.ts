@@ -70,6 +70,8 @@ export class InfoMovieComponent {
     });
   }
 
+  loadingMovie = signal(true);
+
   ngOnInit() {
     this.movieId = this.route.snapshot.paramMap.get("id");
 
@@ -77,11 +79,13 @@ export class InfoMovieComponent {
       this.movieService.buscarPeloId(this.movieId).subscribe({
         next: (value) => {
           this.movie = value;
+          this.loadingMovie.set(false);
         },
         error: (error) => {
           console.error(error);
           this.movieNotFound = true;
           this.toastr.error(error.message, "FALHA");
+          this.loadingMovie.set(false);
         }
       });
     }
