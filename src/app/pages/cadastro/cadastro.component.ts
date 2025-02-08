@@ -53,6 +53,8 @@ export class CadastroComponent {
       return;
     }
     if (!this.cadastroForm.valid) return;
+
+    this.requestLoading.set(true);
     
     this.identityService.cadastro(
       this.cadastroForm.value.email,

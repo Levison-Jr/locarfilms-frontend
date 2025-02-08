@@ -3,7 +3,8 @@
     secondaryBtnText="Voltar"
     (callbackPrimaryBtn)="cadastrar()"
     [primaryBtnDisabled]="requestLoading()"
-    (callbackSecondaryBtn)="navigateToLoginPage()">
+    (callbackSecondaryBtn)="navigateToLoginPage()"
+    [loadingOverlayVisible]="requestLoading()">
 
     <form [formGroup]="cadastroForm">
         <app-primary-input
