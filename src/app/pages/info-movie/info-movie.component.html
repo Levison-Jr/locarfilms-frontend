@@ -1,4 +1,4 @@
-<app-default-layout [headerVisible]="false">
+<app-default-layout [headerVisible]="false" [loadingOverlayVisible]="loadingMovie() || requestLoading()">
     <main>
         @if (movie) {
             <section id="main-section" [style]="isTraillerVisible ? 'display: none' : ''">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { DefaultLayoutComponent } from '../../components/default-layout/default-layout.component';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { UserService } from '../../services/user.service';
@@ -41,10 +41,19 @@ export class UserProfileComponent {
 
   user!: UserDto;
 
+  requestLoading = signal(false);
+
   ngOnInit() {
+    this.buscarInfoUser();
+  }
+
+  buscarInfoUser() {
+    this.requestLoading.set(true);
     const userId = sessionStorage.getItem("user-id") || "";
+
     this.userService.buscarPeloId(userId).subscribe({
       next: (value) => {
+        this.requestLoading.set(false);
         this.user = value;
 
         this.userForm.setValue({
@@ -54,6 +63,7 @@ export class UserProfileComponent {
         });
       },
       error: (error) => {
+        this.requestLoading.set(false);
         this.toastr.error(error.message, "FALHA");
         
         if (error.message?.includes('token'))
@@ -76,6 +86,8 @@ export class UserProfileComponent {
       return;
     }
 
+    this.requestLoading.set(true);
+
     const userId = sessionStorage.getItem("user-id") || "";
     const dadosUser: AtualizarUserRequest = {
       firstName: this.userForm.value.firstName,
@@ -83,15 +95,20 @@ export class UserProfileComponent {
       phoneNumber: this.userForm.value.phoneNumber
     }
     
-    console.log(dadosUser);
-    
-
     this.userService.atualizarCadastro(userId, dadosUser).subscribe({
       next: (value) => {
         this.toastr.success("Dados atualizados!", "SUCESSO");
-        window.location.reload();
+        
+        this.user.firstName = this.userForm.value.firstName;
+        this.user.lastName = this.userForm.value.lastName;
+        this.user.phoneNumber = this.userForm.value.phoneNumber;
+
+        this.requestLoading.set(false);
       },
-      error: (error) => { this.toastr.error(error.message, "FALHA"); }
+      error: (error) => {
+        this.requestLoading.set(false);
+        this.toastr.error(error.message, "FALHA");
+      }
     });
   }
 }

@@ -59,6 +59,14 @@
     </section>
 
     <section id="body-section">
+        <div id="loading-overlay" [style]="!loadingOverlayVisible ? 'display: none' : ''">
+            <div id="loading-overlay-body">
+                <span class="loading-circle"></span>
+                <span class="loading-circle"></span>
+                <span class="loading-circle"></span>
+            </div>
+        </div>
+
         <ng-content></ng-content>
     </section>
 

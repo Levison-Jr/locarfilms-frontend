@@ -18,6 +18,8 @@ import { IdentityService } from '../../services/identity.service';
 })
 export class DefaultLayoutComponent {
   @Input() headerVisible: boolean = true;
+  @Input() loadingOverlayVisible: boolean = false;
+
   usuarioAutenticado: boolean = false;
 
   constructor(

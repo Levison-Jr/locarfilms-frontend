@@ -3,7 +3,8 @@
     secondaryBtnText="Cadastrar"
     (callbackPrimaryBtn)="login()"
     [primaryBtnDisabled]="!loginForm.valid || requestLoading()"
-    (callbackSecondaryBtn)="navigateToSignupPage()">
+    (callbackSecondaryBtn)="navigateToSignupPage()"
+    [loadingOverlayVisible]="requestLoading()">
 
     <form [formGroup]="loginForm">
         <app-primary-input

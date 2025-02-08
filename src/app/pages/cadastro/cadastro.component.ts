@@ -53,6 +53,8 @@ export class CadastroComponent {
       return;
     }
     if (!this.cadastroForm.valid) return;
+
+    this.requestLoading.set(true);
     
     this.identityService.cadastro(
       this.cadastroForm.value.email,
@@ -61,8 +63,7 @@ export class CadastroComponent {
     )
       .subscribe({
         next: () => {
-          this.toastr.success("Cadastro efetuado com sucesso!", "BEM-VINDO(A)");
-          this.requestLoading.set(false);
+          this.efetuarLoginAposCadastro();
         },
         error: (error) => {
           this.toastr.error(error.message, "FALHA");
@@ -73,5 +74,26 @@ export class CadastroComponent {
 
   navigateToLoginPage() {
     this.router.navigate(["login"]);
+  }
+
+  navigateToMainPage() {
+    this.router.navigate([""]);
+  }
+
+  efetuarLoginAposCadastro() {
+
+    this.identityService.login(this.cadastroForm.value.email, this.cadastroForm.value.password)
+      .subscribe({
+        next: () => {
+          this.toastr.success("Cadastro efetuado com sucesso!", "BEM-VINDO(A)");
+          this.requestLoading.set(false);
+
+          this.navigateToMainPage();
+        },
+        error: () => {
+          this.toastr.error("Não foi possível realizar o login.", "FALHA");
+          this.requestLoading.set(false);
+        }       
+      });
   }
 }

@@ -16,6 +16,7 @@ export class DefaultLoginLayoutComponent {
   @Input() primaryBtnDisabled: boolean = true;
   @Output("callbackPrimaryBtn") onClickPrimaryBtn = new EventEmitter();
   @Output("callbackSecondaryBtn") onClickSecondaryBtn = new EventEmitter();
+  @Input() loadingOverlayVisible: boolean = false;
 
   primaryBtnEmitter() {
     this.onClickPrimaryBtn.emit();
