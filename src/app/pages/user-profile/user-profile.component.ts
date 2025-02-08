@@ -44,9 +44,13 @@ export class UserProfileComponent {
   requestLoading = signal(false);
 
   ngOnInit() {
-    this.requestLoading.set(true);
+    this.buscarInfoUser();
+  }
 
+  buscarInfoUser() {
+    this.requestLoading.set(true);
     const userId = sessionStorage.getItem("user-id") || "";
+
     this.userService.buscarPeloId(userId).subscribe({
       next: (value) => {
         this.requestLoading.set(false);
@@ -94,7 +98,12 @@ export class UserProfileComponent {
     this.userService.atualizarCadastro(userId, dadosUser).subscribe({
       next: (value) => {
         this.toastr.success("Dados atualizados!", "SUCESSO");
-        window.location.reload();
+        
+        this.user.firstName = this.userForm.value.firstName;
+        this.user.lastName = this.userForm.value.lastName;
+        this.user.phoneNumber = this.userForm.value.phoneNumber;
+
+        this.requestLoading.set(false);
       },
       error: (error) => {
         this.requestLoading.set(false);
