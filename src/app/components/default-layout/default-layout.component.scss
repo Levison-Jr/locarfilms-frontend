@@ -112,6 +112,48 @@ main {
     #body-section {
         flex-grow: 1;
         height: 1px;
+
+        position: relative;
+
+        #loading-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 9999;
+            background-color: rgb(0 0 0 / 10%);
+
+            #loading-overlay-body {
+                display: flex;
+                gap: 12px;
+                position: relative;
+
+                .loading-circle {
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    background-color: #9b6aff;
+                    border-radius: 50%;
+
+                    animation: loading .5s infinite ease-in-out;
+
+                    &:nth-child(1) {
+                        animation-delay: 0.4s;
+                    }
+
+                    &:nth-child(2) {
+                        animation-delay: 0.2s;
+                    }
+
+                    &:nth-child(3) {
+                        animation-delay: 0s;
+                    }
+                }
+            }
+        }
     }
 
     #footer-section {
@@ -169,5 +211,16 @@ main {
                 zoom: 1.5
             }
         }
+    }
+}
+
+@keyframes loading {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
     }
 }
