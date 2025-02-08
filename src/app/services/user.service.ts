@@ -4,12 +4,13 @@ import { ErrorHandlerService } from './error-handler.service';
 import { UserDto } from '../types/response/user-dto.type';
 import { catchError, tap } from 'rxjs';
 import { AtualizarUserRequest } from '../types/request/atualizar-user.type';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  endpoint: string = "https://locarfilms.runasp.net/api/Users";
+  endpoint: string = `${environment.API_URL}/Users`;
 
   constructor(
     private httpClient: HttpClient,

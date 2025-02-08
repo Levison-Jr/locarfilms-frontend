@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { ErrorHandlerService } from './error-handler.service';
 import { MovieDto } from '../types/movie-dto.type';
 import { catchError, tap } from 'rxjs';
-import { MovieStatusEnum } from '../enums/movie-status-enum';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  endpoint: string = "https://locarfilms.runasp.net/api/Movies";
+  endpoint: string = `${environment.API_URL}/Movies`;
 
   constructor(
     private httpClient: HttpClient,

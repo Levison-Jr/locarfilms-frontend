@@ -4,13 +4,14 @@ import { LoginResponse } from '../types/response/login-response.type';
 import { catchError, tap } from 'rxjs';
 import { UserDto } from '../types/response/user-dto.type';
 import { ErrorHandlerService } from './error-handler.service';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IdentityService {
-  endpointLogin: string = "https://locarfilms.runasp.net/api/Users/login";
-  endpointCadastro: string = "https://locarfilms.runasp.net/api/Users/register";
+  endpointLogin: string = `${environment.API_URL}/Users/login`;
+  endpointCadastro: string = `${environment.API_URL}/Users/register`;
 
   constructor(private httpClient: HttpClient, private errorHandler: ErrorHandlerService) { }
 

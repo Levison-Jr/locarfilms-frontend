@@ -4,12 +4,13 @@ import { tap, catchError } from 'rxjs';
 import { ErrorHandlerService } from './error-handler.service';
 import { CriarAluguelRequest } from '../types/request/criar-aluguel.type';
 import { AluguelDto } from '../types/aluguel-dto.type';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AluguelService {
-  endpoint: string = "https://locarfilms.runasp.net/api/Rental";
+  endpoint: string = `${environment.API_URL}/Rental`;
 
   constructor(
     private httpClient: HttpClient,
