@@ -18,14 +18,19 @@
             </div>
 
             <div id="wrapper-movie-cards">
-                @for (movie of moviesToExplorer; track $index) {
-                    <app-movie-card
-                        [movieId]="movie.id"
-                        [titulo]="movie.title"
-                        [categoria]="movie.category"
-                        [caminhoImagem]="movie.imageIconUrl">
-
-                    </app-movie-card>
+                @if (moviesToExplorer.length == 0) {
+                    Carregando filmes...
+                }
+                @else {
+                    @for (movie of moviesToExplorer; track $index) {
+                        <app-movie-card
+                            [movieId]="movie.id"
+                            [titulo]="movie.title"
+                            [categoria]="movie.category"
+                            [caminhoImagem]="movie.imageIconUrl">
+    
+                        </app-movie-card>
+                    }
                 }
             </div>
         </section>
