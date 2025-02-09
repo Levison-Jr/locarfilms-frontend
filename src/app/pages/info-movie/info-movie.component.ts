@@ -148,13 +148,7 @@ export class InfoMovieComponent {
     const baseDate = pickDay.value == 'hoje' ? this.dateTimeToday : this.dateTimeTomorrow;
 
     const date = new Date(baseDate.getTime());
-
-    const days = Number((document.getElementById("input-numero-dias") as HTMLInputElement).value);
-
-    if (days > 1000 || days < 0) {
-      this.totalDays = 0;
-      return;
-    }
+    const days = Number((document.getElementById("select-numero-dias") as HTMLInputElement).value);
 
     date.setDate(date.getDate() + days);
 

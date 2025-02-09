@@ -86,10 +86,17 @@
     
                     <div id="wrapper-numero-dias">
                         Alugar por
-                        <input (input)="atualizarResumo()"
-                            type="number"
-                            min="1"
-                            id="input-numero-dias"> dia(s)
+
+                        <select id="select-numero-dias" (change)="atualizarResumo()">
+                            <option value="" selected disabled>---</option>
+                            <option value="1">1 dia</option>
+                            <option value="2">2 dias</option>
+                            <option value="3">3 dias</option>
+                            <option value="4">4 dias</option>
+                            <option value="5">5 dias</option>
+                            <option value="6">6 dias</option>
+                            <option value="7">7 dias</option>
+                        </select>
                     </div>
     
                     <div id="container-resumo">

@@ -180,6 +180,8 @@ main {
             }
     
             #wrapper-numero-dias {
+                display: flex;
+                gap: 15px;
                 color: $secondary-color;
     
                 #input-numero-dias {
@@ -188,6 +190,16 @@ main {
                     border-radius: 5px;
                     border: 1px solid rgba(209.31249797344208, 209.31249797344208, 209.31249797344208, 1);
                     
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+
+                #select-numero-dias {
+                    text-align: center;
+                    border-radius: 5px;
+                    border: 1px solid rgba(209.31249797344208, 209.31249797344208, 209.31249797344208, 1);
+
                     &:focus-visible {
                         outline: none;
                     }
