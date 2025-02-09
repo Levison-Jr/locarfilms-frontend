@@ -40,8 +40,8 @@ export class CadastroComponent {
   ) {
     this.cadastroForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(50)]),
-      passwordConfirmation: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(50)])
+      password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      passwordConfirmation: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)])
     }, { validators: confirmPasswordValidator });
   }
 
@@ -52,7 +52,11 @@ export class CadastroComponent {
       this.toastr.error("A confirmação da senha não é válida.", "FALHA");
       return;
     }
-    if (!this.cadastroForm.valid) return;
+
+    if (!this.cadastroForm.valid) {
+      this.toastr.error("A senha precisa ter letra maiúscula, minúscula e número, entre 5 e 20 caracteres.", "FALHA");
+      return;
+    }
 
     this.requestLoading.set(true);
     
