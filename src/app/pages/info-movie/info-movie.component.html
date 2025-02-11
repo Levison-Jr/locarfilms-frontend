@@ -84,30 +84,31 @@
                         </div>
                     </div>
     
-                    <div id="wrapper-numero-dias">
-                        Alugar por
-
-                        <select id="select-numero-dias" (change)="atualizarResumo()">
-                            <option value="" selected disabled>---</option>
-                            <option value="1">1 dia</option>
-                            <option value="2">2 dias</option>
-                            <option value="3">3 dias</option>
-                            <option value="4">4 dias</option>
-                            <option value="5">5 dias</option>
-                            <option value="6">6 dias</option>
-                            <option value="7">7 dias</option>
-                        </select>
-                    </div>
-    
                     <div id="container-resumo">
                         <p>Resumo do aluguel</p>
     
-                        <div id="wrapper-resumo">
-                            @if (dateTimeExpiration === null || totalDays <= 0) {
-                                Selecione a quantidade de dias
-                            }
-                            @else {
-                                <span>Duração: <span>{{ totalDays }}</span> <span> dia(s)</span></span>
+                        <div id="wrapper-resumo" [style]="totalDays > 0 ? '' : 'padding: 0 15px 0 0'">
+                            <div id="container-select">
+                                @if (totalDays > 0) {
+                                    <div>Alugar por:</div>
+                                }
+
+                                <select id="select-numero-dias"
+                                    (change)="atualizarResumo()"
+                                    [style]="totalDays > 0 ? 'font-weight: bold' : 'padding: 15px 0 15px 15px'">
+
+                                    <option value="" selected disabled>Selecione a quantidade de dias</option>
+                                    <option value="1">1 dia</option>
+                                    <option value="2">2 dias</option>
+                                    <option value="3">3 dias</option>
+                                    <option value="4">4 dias</option>
+                                    <option value="5">5 dias</option>
+                                    <option value="6">6 dias</option>
+                                    <option value="7">7 dias</option>
+                                </select>
+                            </div>
+
+                            @if (totalDays > 0) {
                                 <span>Valor total: <span>{{ totalValue | currency : 'BRL' }}</span></span>
                                 <span>Retirar até: <span>{{ dateTimeTomorrow.toLocaleDateString() }}</span></span>
                                 <span>Devolução: <span>{{ dateTimeExpiration.toLocaleDateString() }}</span></span>
@@ -115,7 +116,11 @@
                         </div>
                     </div>
     
-                    <app-button (onClick)="confirmarAluguel()" [disabled]="requestLoading() || dateTimeExpiration === null || totalDays <= 0" btnType="primatyButton">
+                    <app-button
+                        (onClick)="confirmarAluguel()"
+                        [disabled]="requestLoading() || totalDays <= 0"
+                        btnType="primatyButton">
+
                         CONFIRMAR
                     </app-button>
     

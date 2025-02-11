@@ -56,7 +56,7 @@ export class InfoMovieComponent {
 
   totalDays: number = 0;
   totalValue: number = 0;
-  dateTimeExpiration: Date | null = null;
+  dateTimeExpiration: Date = new Date();
 
   constructor(
     private route: ActivatedRoute,
