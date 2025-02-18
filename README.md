@@ -1,6 +1,8 @@
 
 # LOCAR FILMS [Front-end]
 
+### Projeto publicado: https://locarfilms.levisonjr-app.site
+
 Como complemento aos meus estudos no backend, comecei a estudar Angular para criar o frontend do meu projeto pessoal sobre uma locadora, o Locar Films.
 
 O backend foi feito com C#|.NET. Para mais detalhes, veja o repositório [aqui no GitHub](https://github.com/Levison-Jr/locarfilms-backend).
